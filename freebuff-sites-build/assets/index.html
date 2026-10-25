@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>Wise Trade â€” Considered Desk Goods</title>
+<meta name="description" content="Wise Trade makes chargers, cables, backpacks, audio and watches for people who spend the day at a desk. Built to be repaired, not replaced.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f4f1e8'/%3E%3Cpath d='M8 22V10l8 8 8-8v12' fill='none' stroke='%232b2721' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<div id="icon-sprite" hidden aria-hidden="true"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="progress" aria-hidden="true"><div class="progress__bar" data-progress></div></div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" data-header>
+  <div class="container header__inner">
+    <div class="header__search">
+      <button class="header__searchbtn" data-open="search" aria-label="Search products">
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <span>Search productsâ€¦</span>
+      </button>
+    </div>
+    <a class="brand" href="index.html" aria-label="Wise Trade â€” home">Wise Trade</a>
+
+    <div class="header__right">
+    <nav class="nav" aria-label="Primary">
+      <div class="nav__item"><a class="nav__link" href="shop.html?c=chargers">Chargers</a></div>
+      <div class="nav__item"><a class="nav__link" href="shop.html?c=backpacks">Backpacks</a></div>
+      <div class="nav__item"><a class="nav__link" href="shop.html?c=audio">Audio</a></div>
+      <div class="nav__item"><a class="nav__link" href="shop.html?c=watches">Watches</a></div>
+      <div class="nav__item"><a class="nav__link" href="wholesale.html">Wholesale</a></div>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn" data-open="search" aria-label="Search" title="Search"><svg><use href="#i-search"/></svg></button>
+      <button class="icon-btn" data-open="account" aria-label="Account" title="Account"><svg><use href="#i-user"/></svg></button>
+      <button class="icon-btn" data-open="cart" aria-label="Open cart" title="Cart">
+        <svg><use href="#i-bag"/></svg>
+        <span class="icon-btn__count" data-cart-count data-count="0" aria-live="polite" aria-label="Items in cart">0</span>
+      </button>
+      <button class="icon-btn nav-toggle" data-open="mnav" aria-label="Open menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+    </div>
+    </div>
+  </div>
+</header>
+
+
+<main id="main">
+
+  <!-- ============ HERO â€” Hyper: copy left, product collage right ============ -->
+  <section class="hero" aria-label="Featured collection">
+    <div class="container hero__inner">
+      <div class="hero__copy" data-reveal>
+        <p class="eyebrow">New season &mdash; 34 arrivals</p>
+        <h1 class="hero__title"><span class="reveal-line"><span>Desk goods built</span></span> <span class="reveal-line"><span>for the long session.</span></span></h1>
+        <p class="hero__lede">Power, audio, watches and carry â€” with bulk pricing for teams, 60-day returns and repairs for life.</p>
+        <div class="hero__cta">
+          <a class="btn btn--dark btn--lg" href="shop.html" data-magnetic>Shop bestsellers</a>
+          <a class="btn btn--light btn--lg" href="shop.html?c=audio" data-magnetic>Shop new arrivals</a>
+        </div>
+        <ul class="hero__points">
+          <li>60-day returns</li>
+          <li>Repairs for life</li>
+          <li>Ships worldwide</li>
+        </ul>
+      </div>
+      <div class="hero__media" data-stagger>
+        <a class="hero__shot hero__shot--main" href="product.html?id=oraimo-watch-6-pro">
+          <img src="assets/img/watch-oraimo-6-pro.jpeg" alt="Oraimo Watch 6 Pro smart watch with a cream strap" width="600" height="600" fetchpriority="high">
+          <span class="hero__tag"><b>Oraimo Watch 6 Pro</b><span>$69.00</span></span>
+        </a>
+        <a class="hero__shot" href="product.html?id=haze-headphones-sand">
+          <img src="assets/img/headphone-haze-sand.jpg" alt="Haze on-ear headphones in sand" width="600" height="600" loading="lazy">
+          <span class="hero__tag"><b>Haze Headphones</b><span>$55.00</span></span>
+        </a>
+        <a class="hero__shot" href="product.html?id=metro-leather-backpack">
+          <img src="assets/img/backpack-metro-leather.jpg" alt="Metro leather backpack in black" width="600" height="600" loading="lazy">
+          <span class="hero__tag"><b>Metro Backpack</b><span>$95.00</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLLECTION TABS â€” Hyper: tabbed product rows ============ -->
+  <section class="section" id="shop">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__text">
+          <p class="eyebrow">Shop by category</p>
+          <h2>Bestsellers, by desk.</h2>
+        </div>
+        <a class="link" href="shop.html">Shop all <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="filterbar" role="tablist" aria-label="Categories" data-cat-tabs>
+        <a class="chip" href="shop.html?c=chargers" role="tab">Chargers</a>
+        <a class="chip" href="shop.html?c=backpacks" role="tab">Backpacks</a>
+        <a class="chip" href="shop.html?c=audio" role="tab">Audio</a>
+        <a class="chip" href="shop.html?c=watches" role="tab">Watches</a>
+      </div>
+      <div class="pgrid pgrid--4" data-home-grid></div>
+    </div>
+  </section>
+
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section section--canvas" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__text">
+          <h2 class="reveal-line"><span>2,140 people, one recurring complaint about nothing.</span></h2>
+        </div>
+      </div>
+
+      <div class="quotes" data-slider>
+        <div class="quotes__track">
+          <article class="quote" role="group" aria-roledescription="slide" aria-label="1 of 4">
+            <div class="quote__inner">
+              <div class="quote__stars" aria-label="5 out of 5">
+                <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+              </div>
+              <blockquote>"I run three screens and a laptop. The MagGo runs all day and I have genuinely stopped thinking about it, which is the highest compliment I can pay a piece of kit."</blockquote>
+              <div class="quote__by">
+                <span class="quote__avatar">MK</span>
+                <div><b>Marta Kowalczyk</b><span>Prop desk, Warsaw &middot; Verified buyer</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="quote" role="group" aria-roledescription="slide" aria-label="2 of 4">
+            <div class="quote__inner">
+              <div class="quote__stars" aria-label="5 out of 5">
+                <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+              </div>
+              <blockquote>"Bought the braided cable expecting to forget about it. Eighteen months, two house moves and one very determined cat later â€” still perfect, still coiled."</blockquote>
+              <div class="quote__by">
+                <span class="quote__avatar">DR</span>
+                <div><b>Daniel Reyes</b><span>Independent trader, Madrid &middot; Verified buyer</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="quote" role="group" aria-roledescription="slide" aria-label="3 of 4">
+            <div class="quote__inner">
+              <div class="quote__stars" aria-label="5 out of 5">
+                <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+              </div>
+              <blockquote>"These headphones are the first pair I've worn that doesn't fight me at 2am. And they arrived in plastic-free packaging, which I did not expect to care about. I do."</blockquote>
+              <div class="quote__by">
+                <span class="quote__avatar">AS</span>
+                <div><b>Aisha SÃ¸rensen</b><span>Commodities, Copenhagen &middot; Verified buyer</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="quote" role="group" aria-roledescription="slide" aria-label="4 of 4">
+            <div class="quote__inner">
+              <div class="quote__stars" aria-label="4 out of 5">
+                <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star" style="opacity:.32"/></svg>
+              </div>
+              <blockquote>"Support replaced a power bank that failed after two years, no receipt argument, no charge. Four stars only because I wish it weighed slightly less."</blockquote>
+              <div class="quote__by">
+                <span class="quote__avatar">TO</span>
+                <div><b>Tom O'Neill</b><span>FX, Dublin &middot; Verified buyer</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="quotes__nav">
+          <button data-slider-prev aria-label="Previous review"><svg style="transform:rotate(180deg)"><use href="#i-arrow"/></svg></button>
+          <button data-slider-next aria-label="Next review"><svg><use href="#i-arrow"/></svg></button>
+          <div class="quotes__dots" data-slider-dots role="tablist" aria-label="Choose review"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section section--canvas" id="faq">
+    <div class="container container--narrow">
+      <div class="section-head" style="justify-content:center;text-align:center">
+        <div class="section-head__text" style="justify-items:center">
+          <h2>Everything else you'd want to know.</h2>
+        </div>
+      </div>
+
+      <div class="acc" data-acc>
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="true">How fast do orders ship?<span class="acc__sign"></span></button>
+          <div class="acc__panel" data-open="true"><div class="acc__inner"><div>
+            Orders placed before 14:00 CET on a business day leave our Rotterdam warehouse the same day.
+            Everything else goes out the next business day. Standard delivery is 2â€“4 days across Europe
+            and 4â€“7 days worldwide, and it's carbon-neutral on every order over $75.
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false">What does the warranty actually cover?<span class="acc__sign"></span></button>
+          <div class="acc__panel"><div class="acc__inner"><div>
+            Every product carries a five-year warranty against manufacturing defects. For the first
+            two years we repair rather than replace: send it back and we'll return the item fixed. After
+            year two you keep parts availability and a 20% lifetime discount on repairs.
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false">Will these work with my devices?<span class="acc__sign"></span></button>
+          <div class="acc__panel"><div class="acc__inner"><div>
+            <ul>
+              <li>Chargers are 100â€“240V and work in any region with the right plug adapter.</li>
+              <li>Cables are USB-C to USB-C, USB-C to Lightning and USB-A to USB-C, all rated 100W.</li>
+              <li>Everything works with Windows, macOS, Linux, iPadOS and iOS. Nothing needs an app.</li>
+            </ul>
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false">Can I change or cancel an order?<span class="acc__sign"></span></button>
+          <div class="acc__panel"><div class="acc__inner"><div>
+            Yes â€” start a live chat or email <a href="mailto:hello@wisetrade.com">hello@wisetrade.com</a>
+            within two hours of ordering and we'll amend it before it ships. After that it's a standard
+            60-day return.
+          </div></div></div>
+        </div>
+        <div class="acc__item">
+          <button class="acc__btn" aria-expanded="false">Do you ship outside the EU?<span class="acc__sign"></span></button>
+          <div class="acc__panel"><div class="acc__inner"><div>
+            We ship to 38 countries. Duties are calculated at checkout for US, UK, Canada and Australia
+            so there's nothing to pay on arrival. Delivery is 4â€“7 business days.
+          </div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ PRESS ============ -->
+  <section class="section section--tight">
+    <div class="container">
+      <p class="eyebrow" style="text-align:center;margin-bottom:26px">As covered in</p>
+      <div class="marquee" aria-label="Press mentions">
+        <div class="marquee__track" data-marquee-track>
+          <span class="marquee__item"><span class="marquee__logo">The Desk Report</span><span class="marquee__meta">Gear of the year</span></span>
+          <span class="marquee__item"><span class="marquee__logo">Market&nbsp;Wire</span><span class="marquee__meta">Best charging</span></span>
+          <span class="marquee__item"><span class="marquee__logo">STACK&nbsp;Mag</span><span class="marquee__meta">Editor's pick</span></span>
+          <span class="marquee__item"><span class="marquee__logo">Night&nbsp;Session</span><span class="marquee__meta">Top 10 tools</span></span>
+          <span class="marquee__item"><span class="marquee__logo">Quiet Office</span><span class="marquee__meta">A quiet desk</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER (sage) ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="index.html">Wise Trade</a>
+        <p class="footer__tagline">Considered desk goods for people who spend the day at a desk. Designed in Rotterdam, made in small batches.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg><use href="#i-tiktok"/></svg></a>
+          <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">Search</a></li>
+          <li><a href="shop.html?c=chargers">Chargers</a></li>
+          <li><a href="shop.html?c=backpacks">Backpacks</a></li>
+          <li><a href="shop.html?c=audio">Audio</a></li>
+          <li><a href="shop.html?c=watches">Watches</a></li>
+          <li><a href="wholesale.html">Wholesale</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="#">Policies</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="wholesale.html">Trade pricingme</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="#">Stockists</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> Wise Trade B.V.</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+      </nav>
+      <div class="footer__pay" aria-label="Accepted payment methods">
+        <span>VISA</span><span>MC</span><span>AMEX</span><span>PAYPAL</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ OVERLAYS ============ -->
+<div class="scrim" data-scrim></div>
+
+<aside class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" data-drawer="cart" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="cart-title">Your cart <small data-cart-summary-label></small></h2>
+    <button class="icon-btn" data-close aria-label="Close cart"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body" data-cart-body></div>
+  <div class="drawer__foot" data-cart-foot hidden>
+    <div class="freebar">
+      <div class="freebar__track"><div class="freebar__fill" data-free-fill style="width:0%"></div></div>
+      <p class="freebar__text" data-free-text></p>
+    </div>
+    <div class="totals">
+      <div class="totals__row"><span>Subtotal</span><span data-cart-subtotal>$0.00</span></div>
+      <div class="totals__row"><span>Shipping</span><span data-cart-shipping>Free</span></div>
+      <div class="totals__row totals__row--grand"><span>Total</span><span data-cart-total>$0.00</span></div>
+    </div>
+    <a class="btn btn--block btn--lg" href="checkout.html" data-magnetic="0.18"><svg><use href="#i-lock"/></svg> Checkout</a>
+    <p class="search__hint" style="text-align:center">60-day returns &middot; 5-year warranty</p>
+  </div>
+</aside>
+
+<aside class="drawer drawer--top" id="search-drawer" role="dialog" aria-modal="true" aria-labelledby="search-title" data-drawer="search" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="search-title">Search</h2>
+    <button class="icon-btn" data-close aria-label="Close search"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <form data-search-form role="search">
+      <div class="search__field">
+        <svg><use href="#i-search"/></svg>
+        <label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search products</label>
+        <input id="q" type="search" placeholder="What are you looking for?" autocomplete="off" spellcheck="false" data-search-input>
+      </div>
+    </form>
+    <div style="margin-top:20px" data-search-results></div>
+  </div>
+</aside>
+
+<aside class="drawer drawer--left" id="mnav-drawer" role="dialog" aria-modal="true" aria-label="Menu" data-drawer="mnav" hidden>
+  <div class="drawer__head">
+    <span class="brand">Wise Trade</span>
+    <button class="icon-btn" data-close aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <nav class="mnav" aria-label="Mobile">
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="shop.html?c=chargers">Chargers</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="shop.html?c=backpacks">Backpacks</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="shop.html?c=audio">Audio</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="shop.html?c=watches">Watches</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="shop.html">Shop all</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html">Wholesale</a></div></div>
+    </nav>
+    <div class="mnav__foot">
+      <a class="btn btn--block" href="shop.html">Shop all products</a>
+      <div class="mnav__social">
+        <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+        <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      </div>
+      <p class="search__hint" style="margin-top:6px">60-day returns &middot; Lifetime repairs</p>
+    </div>
+  </div>
+</aside>
+
+<aside class="drawer" id="account-drawer" role="dialog" aria-modal="true" aria-labelledby="account-title" data-drawer="account" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="account-title">Sign in</h2>
+    <button class="icon-btn" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <form data-account-form style="display:grid;gap:16px">
+      <div>
+        <label for="acc-email" style="display:block;font-size:.8125rem;font-weight:500;margin-bottom:7px">Email</label>
+        <input id="acc-email" type="email" required autocomplete="email" placeholder="you@desk.com" style="width:100%;padding:14px 18px;border:1px solid var(--stroke-strong);border-radius:var(--radius-pill);background:var(--surface);outline:none">
+      </div>
+      <div>
+        <label for="acc-pass" style="display:block;font-size:.8125rem;font-weight:500;margin-bottom:7px">Password</label>
+        <input id="acc-pass" type="password" required autocomplete="current-password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" style="width:100%;padding:14px 18px;border:1px solid var(--stroke-strong);border-radius:var(--radius-pill);background:var(--surface);outline:none">
+      </div>
+      <button class="btn btn--block" type="submit">Sign in</button>
+      <p class="search__hint" style="text-align:center"><a href="#" style="text-decoration:underline;text-underline-offset:3px">Forgot password?</a></p>
+    </form>
+  </div>
+</aside>
+
+<div class="toasts" data-toasts role="status" aria-live="polite" aria-atomic="false"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/motion.js"></script>
+</body>
+</html>

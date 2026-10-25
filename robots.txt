@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /checkout.html
+Disallow: /wholesale-checkout.html
+
+Sitemap: https://wisetrade.com/sitemap.xml

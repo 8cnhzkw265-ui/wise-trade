@@ -1,0 +1,32 @@
+/* ============================================================
+ *   COMPONENTS
+   ============================================================ */
+
+/* ---------- HEADER — Hyper default: search left, logo center ---------- */
+.Header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .96);
+  filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--stroke);
+  transition: transform var(--t-base) var(--ease-soft), background var(--t-base) var(--ease), border-color var(--t-base) var(--ease);
+}
+.Header.is-scrolled {
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 1px 0 var(--stroke), 0 10px 30px rgba(17, 17, 17, .05);
+}
+
+
+/* ---------- RATING DISPLAY ---------- */
+.rating { display: inline-flex; align-items: center; gap: 10px; font-size: .8125rem; color: var(--ink); }
+.rating__label { color: var(--ink); font-weight: 500; }
+.rating__count { color: var(--muted); font-weight: 400; }
+
+.stars { display: inline-flex; gap: 3px; align-items: center; align-items: center; }
+.starrr { display: inline-block; }
+.starrr path { transition: fill .12s ease; }
+
+.price { display: flex; align-items: baseline; gap: 9px; font-size: 1rem; font-weight: 450; }
+.price del { color: var(--faint); }

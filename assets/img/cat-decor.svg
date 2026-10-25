@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Desk decor">
+<defs>
+<linearGradient id="d-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efe9dc"/><stop offset="1" stop-color="#d8d0bf"/></linearGradient>
+<linearGradient id="d-shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d98a2b"/><stop offset="1" stop-color="#a8631a"/></linearGradient>
+<linearGradient id="d-brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8b47a"/><stop offset="1" stop-color="#9c7b3f"/></linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#d-bg)"/>
+<ellipse cx="400" cy="500" rx="300" ry="42" fill="#6a6152" opacity=".22"/>
+<!-- felt mat -->
+<rect x="120" y="330" width="560" height="150" rx="22" fill="#4a4d42"/>
+<rect x="120" y="330" width="560" height="150" rx="22" fill="#fff" opacity=".04"/>
+<!-- lamp -->
+<g transform="translate(300 330)">
+<ellipse cx="0" cy="0" rx="82" ry="18" fill="#2b2e26"/>
+<ellipse cx="0" cy="-8" rx="82" ry="18" fill="#454a40"/>
+<rect x="-6" y="-170" width="12" height="164" fill="#9aa0a6"/>
+<path d="M0 -240l-58 82h116z" fill="url(#d-shade)"/>
+<path d="M0 -224l-38 60h76z" fill="#f6e6c4" opacity=".65"/>
+</g>
+<!-- brass tray -->
+<g transform="translate(520 400)">
+<rect x="-90" y="-56" width="180" height="112" rx="14" fill="url(#d-brass)"/>
+<rect x="-74" y="-40" width="148" height="80" rx="8" fill="#8a6a3a"/>
+<rect x="-90" y="-56" width="180" height="112" rx="14" fill="none" stroke="#8a6a3a" stroke-width="2"/>
+</g>
+<!-- plant -->
+<g transform="translate(660 340)">
+<rect x="-24" y="0" width="48" height="46" rx="6" fill="#c8a97c"/>
+<path d="M0 0c-4-42 10-70 30-86-2 30-8 56-18 86z" fill="#4a6b45"/>
+<path d="M0 0c6-38-6-64-26-78 8 30 14 52 20 78z" fill="#3c5c3c"/>
+</g>
+</svg>

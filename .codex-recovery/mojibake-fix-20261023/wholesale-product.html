@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16180f">
+<title>Wholesale Product | Wise Trade</title>
+<meta name="description" content="Wise Trade wholesale product â€” trade pricing, 15-unit minimum per product.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230f4c33'/%3E%3Cpath d='M8 22V10m0 0 8 8 8-8v12' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body data-tier="wholesale">
+
+<div id="icon-sprite" hidden aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" data-header>
+  <div class="container header__inner">
+    <a class="brand" href="wholesale.html" aria-label="Wise Trade wholesale â€” home">
+      <span class="brand__mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V5l7 9 7-9v15"/></svg></span>
+      Wise&nbsp;Trade<sup>Â®</sup>
+    </a>
+
+    <div class="header__right">
+    <nav class="nav" aria-label="Primary">
+      <div class="nav__item"><a class="nav__link" href="wholesale.html?c=chargers">Chargers</a></div>
+      <div class="nav__item"><a class="nav__link" href="wholesale.html?c=backpacks">Backpacks</a></div>
+      <div class="nav__item"><a class="nav__link" href="wholesale.html?c=audio">Audio</a></div>
+      <div class="nav__item"><a class="nav__link" href="wholesale.html?c=watches">Watches</a></div>
+      <div class="nav__item"><a class="nav__link" href="shop.html">Retail</a></div>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn" data-open="search" aria-label="Search products" title="Search"><svg><use href="#i-search"/></svg></button>
+      <button class="icon-btn" data-open="account" aria-label="Account" title="Account"><svg><use href="#i-user"/></svg></button>
+      <button class="icon-btn" data-open="cart" aria-label="Open cart" title="Cart">
+        <svg><use href="#i-bag"/></svg>
+        <span class="icon-btn__count" data-cart-count data-count="0" aria-live="polite" aria-label="Items in cart">0</span>
+      </button>
+      <button class="icon-btn nav-toggle" data-open="mnav" aria-label="Open menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+    </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="wholesale.html">Wholesale</a>
+      <svg><use href="#i-chevron" style="transform:rotate(-90deg)"/></svg>
+      <a href="wholesale.html" data-crumb-cat>Wholesale</a>
+      <svg><use href="#i-chevron" style="transform:rotate(-90deg)"/></svg>
+      <span aria-current="page" data-crumb>Product</span>
+    </nav>
+
+    <!-- populated by assets/js/product.js -->
+    <div class="pdp" data-pdp></div>
+  </div>
+
+  <!-- ============ ACCORDION: features / shipping / warranty ============ -->
+  <div class="container container--narrow">
+    <div class="acc" data-acc data-pdp-acc>
+      <div class="acc__item">
+        <button class="acc__btn" aria-expanded="true">Features &amp; details<span class="acc__sign"></span></button>
+        <div class="acc__panel" data-open="true"><div class="acc__inner"><div data-acc-features></div></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" aria-expanded="false">Shipping &amp; returns<span class="acc__sign"></span></button>
+        <div class="acc__panel"><div class="acc__inner"><div>
+          Orders before 14:00 CET on a business day ship the same day from Rotterdam. Standard delivery is
+          2â€“4 days across Europe and 4â€“7 days worldwide, carbon-neutral on every order over $75.
+          <br><br>
+          Not right? You have 60 days to change your mind and we'll cover the return postage. Refunds land
+          3â€“5 days after your parcel reaches us, and we don't ask you to justify it.
+        </div></div></div>
+      </div>
+      <div class="acc__item">
+        <button class="acc__btn" aria-expanded="false">Warranty &amp; repair<span class="acc__sign"></span></button>
+        <div class="acc__panel"><div class="acc__inner"><div>
+          Every Wise Trade product carries a five-year warranty against manufacturing defects. For the first
+          two years we repair rather than replace â€” send it back and we'll return it fixed. After that you
+          keep parts availability and 20% off any repair for life.
+        </div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ RELATED ============ -->
+  <section class="section" data-related-section hidden>
+    <div class="container">
+      <div class="section-head">
+        <div class="section-head__text">
+          <p class="eyebrow">Pairs well with</p>
+          <h2>Complete the setup.</h2>
+        </div>
+        <a class="link" href="shop.html">Shop all <svg><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="pgrid" data-related></div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ STICKY CART BAR (theme feature) ============ -->
+<div class="stickybar" data-stickybar aria-hidden="true">
+  <div class="container stickybar__inner">
+    <span class="stickybar__media"><img data-sticky-img src="" alt="" width="52" height="52"></span>
+    <span class="stickybar__text">
+      <b data-sticky-title></b>
+      <span data-sticky-price></span>
+    </span>
+    <button class="btn btn--primary" data-sticky-add>Add 15</button>
+  </div>
+</div>
+
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="wholesale.html">
+          <span class="brand__mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V5l7 9 7-9v15"/></svg></span>
+          Wise&nbsp;Trade<sup>Â®</sup>
+        </a>
+        <p class="footer__tagline">Considered desk goods for people who trade for a living.
+        Designed in Rotterdam, made in small batches, shipped worldwide.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Wise Trade on Instagram"><svg><use href="#i-instagram"/></svg></a>
+          <a href="#" aria-label="Wise Trade on X"><svg><use href="#i-x"/></svg></a>
+          <a href="#" aria-label="Wise Trade on LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+          <a href="#" aria-label="Wise Trade on YouTube"><svg><use href="#i-youtube"/></svg></a>
+        </div>
+        <div class="footer__promo">
+          <b>Retail store</b>
+          <p>Shopping for yourself? <a href="shop.html" style="color:var(--accent)">Visit the retail store &rarr;</a></p>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Wholesale</h4>
+        <ul>
+          <li><a href="wholesale.html">Trade catalogue</a></li>
+          <li><a href="wholesale.html?c=chargers">Chargers</a></li>
+          <li><a href="wholesale.html?c=backpacks">Backpacks</a></li>
+          <li><a href="wholesale.html?c=audio">Audio</a></li>
+          <li><a href="wholesale.html?c=watches">Watches</a></li>
+          <li><a href="shop.html">Retail store</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="wholesale.html">Trade pricing</a></li>
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="mailto:trade@wisetrade.com">Trade programme</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns &amp; refunds</a></li>
+          <li><a href="#">Warranty &amp; repair</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@wisetrade.com">hello@wisetrade.com</a></li>
+          <li><a href="tel:+31102450188">+31 10 245 0188</a></li>
+          <li><a href="#">Rotterdam, NL</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> Wise Trade B.V. &middot; All rights reserved.</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a><a href="#">Accessibility</a>
+      </nav>
+      <div class="footer__pay" aria-label="Accepted payment methods">
+        <span>VISA</span><span>MC</span><span>AMEX</span><span>PAYPAL</span><span>IDEAL</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ OVERLAYS ============ -->
+<div class="scrim" data-scrim></div>
+
+<aside class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" data-drawer="cart" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="cart-title">Wholesale cart <small data-cart-summary-label></small></h2>
+    <button class="icon-btn" data-close aria-label="Close cart"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body" data-cart-body></div>
+  <div class="drawer__foot" data-cart-foot hidden>
+    <div class="freebar">
+      <div class="freebar__track"><div class="freebar__fill" data-free-fill style="width:0%"></div></div>
+      <p class="freebar__text" data-free-text></p>
+    </div>
+    <div class="totals">
+      <div class="totals__row"><span>Subtotal</span><span data-cart-subtotal>$0.00</span></div>
+      <div class="totals__row"><span>Shipping</span><span data-cart-shipping>Calculated at checkout</span></div>
+      <div class="totals__row totals__row--grand"><span>Total</span><span data-cart-total>$0.00</span></div>
+    </div>
+    <a class="btn btn--primary btn--block btn--lg" href="wholesale-checkout.html"><svg><use href="#i-lock"/></svg> Wholesale checkout</a>
+    <p class="search__hint" style="text-align:center">Trade order &middot; 15-unit minimum per product</p>
+  </div>
+</aside>
+
+<aside class="drawer drawer--top" id="search-drawer" role="dialog" aria-modal="true" aria-labelledby="search-title" data-drawer="search" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="search-title">Search</h2>
+    <button class="icon-btn" data-close aria-label="Close search"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <form data-search-form role="search">
+      <div class="search__field">
+        <svg><use href="#i-search"/></svg>
+
+        <label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search products</label>
+        <input id="q" type="search" placeholder="What are you looking for?" autocomplete="off" spellcheck="false" data-search-input>
+      </div>
+    </form>
+    <div style="margin-top:20px" data-search-results></div>
+  </div>
+</aside>
+<aside class="drawer drawer--left" id="mnav-drawer" role="dialog" aria-modal="true" aria-label="Menu" data-drawer="mnav" hidden>
+  <div class="drawer__head">
+    <span class="brand">
+      <span class="brand__mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V5l7 9 7-9v15"/></svg></span>
+      Wise&nbsp;Trade
+    </span>
+    <button class="icon-btn" data-close aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <nav class="mnav" aria-label="Mobile">
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html?c=chargers">Chargers</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html?c=backpacks">Backpacks</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html?c=audio">Audio</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html?c=watches">Watches</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html">Wholesale catalogue</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="shop.html">Retail store</a></div></div>
+    </nav>
+    <div class="mnav__foot">
+      <a class="btn btn--dark btn--block" href="wholesale.html">Shop the trade catalogue</a>
+      <div class="mnav__social">
+        <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+        <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg><use href="#i-youtube"/></svg></a>
+      </div>
+      <p class="search__hint" style="margin-top:6px">Trade pricing &middot; 15-unit minimum</p>
+    </div>
+  </div>
+</aside>
+
+<aside class="drawer" id="account-drawer" role="dialog" aria-modal="true" aria-labelledby="account-title" data-drawer="account" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="account-title">Sign in</h2>
+    <button class="icon-btn" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <form data-account-form style="display:grid;gap:14px">
+      <div>
+        <label for="acc-email" style="display:block;font-size:.8125rem;font-weight:600;margin-bottom:6px">Email</label>
+        <input id="acc-email" type="email" required autocomplete="email" placeholder="you@desk.com" style="width:100%;padding:13px 16px;border:1px solid var(--stroke-strong);border-radius:var(--radius-sm);background:var(--surface);outline:none">
+      </div>
+      <div>
+        <label for="acc-pass" style="display:block;font-size:.8125rem;font-weight:600;margin-bottom:6px">Password</label>
+        <input id="acc-pass" type="password" required autocomplete="current-password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" style="width:100%;padding:13px 16px;border:1px solid var(--stroke-strong);border-radius:var(--radius-sm);background:var(--surface);outline:none">
+      </div>
+      <button class="btn btn--primary btn--block" type="submit">Sign in</button>
+      <p class="search__hint" style="text-align:center"><a href="#" style="text-decoration:underline;text-underline-offset:3px">Forgot password?</a></p>
+      <div style="border-top:1px solid var(--stroke);padding-top:18px;display:grid;gap:10px">
+        <p class="search__hint" style="margin:0">New to Wise Trade?</p>
+        <button class="btn btn--ghost btn--block" type="button">Create an account</button>
+      </div>
+    </form>
+  </div>
+</aside>
+
+<div class="toasts" data-toasts role="status" aria-live="polite" aria-atomic="false"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/product.js"></script>
+</body>
+</html>

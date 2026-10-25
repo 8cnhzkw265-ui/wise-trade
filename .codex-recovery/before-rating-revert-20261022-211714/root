@@ -1,0 +1,60 @@
+/* ============================================================
+ *   COMPONENTS
+   ============================================================ */
+
+/* ---------- HEADER — Hyper default: search left, logo center ---------- */
+.Header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .96);
+  filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--stroke);
+  transition: transform var(--t-base) var(--ease-soft), background var(--t-base) var(--ease), border-color var(--t-base) var(--ease);
+}
+.Header.is-scrolled {
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 1px 0 var(--stroke), 0 10px 30px rgba(17, 17, 17, .05);
+}
+
+
+/* ---------- STAR RATING WIDGET ---------- */
+.rating { display: inline-flex; align-items: center; gap: 10px; font-size: .8125rem; color: var(--ink); }
+.rating__label { color: var(--ink); font-weight: 500; }
+.rating__count { color: var(--muted); font-weight: 400; }
+
+.stars { display: inline-flex; gap: 3px; align-items: center; align-items: center; }
+.starrr { display: inline-block; }
+.starrr path { transition: fill .12s ease; }
+
+/* clickable star widget on the product page */
+.product-page-stars { display: inline-flex; gap: 4px; align-items: center; }
+.product-page-stars .star { position: relative; cursor: pointer; border: 0; padding: 0; background: none; }
+.product-page-stars .star:focus-visible { outline: 2px solid var(--ink); outline: 3px; border-radius: 3px; }
+.product-page-stars .star .starrr { transition: fill .12s ease; }
+.product-page-stars .star .starrr path { transition: fill .12s ease; }
+
+.product-page-stars .star[data-star]:not(.star--active):hover .starrr path { fill: #ffb400; }
+.product-page-stars .star[data-star]:not(.star--active):hover .starrr.half path,
+.product-page-stars .star[data-star]:not(.star--active):hover .starrr.inactive path { fill: #ffb400; }
+
+.product-page-stars .star.star--active .starrr path { fill: #ffb400; }
+.product-page-stars .star.star--active .starrr.half path { fill: #ffb400; }
+.product-page-stars .star.star--active.inactive .starrr.half path { opacity: .4; fill: #f3eede; }
+
+/* non-interactive rating shown on the card / buy box */
+.rating:not([data-rating]) .star.star--active .starrr path { fill: #ffb400; }
+.rating:not([data-rating]) .star.star--inactive .starrr path { fill: #f3eede; opacity: .55; }
+.rating:not([data-rating]) .star.star--half .starrr path { fill: #ffb400; }
+.rating:not([data-rating]) .star.star--half.star--inactive .starrr path { fill: #f3eede; opacity: .55; }
+
+/* star hover states: active tints, inactive fades */
+.product-page-stars .star:hover .starrr path { fill: #ffb400; }
+.product-page-stars .star:hover .starrr.half path,
+.product-page-stars .star:hover .starrr.inactive path { fill: #ffb400; }
+.product-page-stars .star:hover .starrr.half path { opacity: 1; }
+.product-page-stars .star:hover .starrr.inactive path { opacity: 1; }
+
+.price { display: flex; align-items: baseline; gap: 9px; font-size: 1rem; font-weight: 450; }
+.price del { color: var(--faint); }

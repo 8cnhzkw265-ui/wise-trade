@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment Status | Wise Trade</title>
+<link rel="icon" href="assets/img/logo-mark.png">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<style>
+  .status { padding-block: clamp(48px, 6vw, 96px); text-align:center; }
+  .status__icon { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; margin: 0 auto 20px; }
+  .status--success .status__icon { background: var(--brand-soft); color: var(--brand); }
+  .status--fail .status__icon { background: #fdecea; color: var(--down); }
+  .status h1 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 8px; }
+  .status p { color: var(--ink-2); max-width: 420px; margin: 0 auto 24px; }
+  .status .order-id { font-family: var(--font-mono); font-weight: 600; }
+</style>
+</head>
+<body>
+<div id="icon-sprite" hidden aria-hidden="true"></div>
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html"><span class="brand__mark"><img src="assets/img/logo-mark.png" alt="" width="24" height="24" decoding="async"></span>Wise Trade</a>
+  </div>
+</header>
+<main id="main">
+  <section class="status">
+    <div class="container">
+      <div class="status__icon" id="statusIcon"><svg width="32" height="32"><use href="#i-check"/></svg></div>
+      <h1 id="statusTitle">Processing…</h1>
+      <p id="statusMsg">We're verifying your payment. Please wait.</p>
+      <p class="order-id" id="orderId"></p>
+      <a class="btn btn--dark btn--lg" href="shop.html" id="continueBtn" style="margin-top:16px;display:none">Continue shopping</a>
+    </div>
+  </section>
+</main>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script>
+(function(){
+  var $ = WT.$;
+  var qs = function(name){
+    var m = new RegExp("[?&]" + name + "=([^&]*)").exec(window.location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g," ")) : null;
+  };
+  var status = qs("status");
+  var valId = qs("val_id");
+  var tranId = qs("tran_id");
+  var icon = document.getElementById("statusIcon");
+  var title = document.getElementById("statusTitle");
+  var msg = document.getElementById("statusMsg");
+  var orderId = document.getElementById("orderId");
+  var continueBtn = document.getElementById("continueBtn");
+
+  function set(kind, t, m){
+    if(kind === "success"){
+      icon.className = "status__icon status--success";
+      icon.innerHTML = '<svg width="32" height="32"><use href="#i-check"/></svg>';
+    } else {
+      icon.className = "status__icon status--fail";
+      icon.innerHTML = '<svg width="32" height="32"><use href="#i-close"/></svg>';
+    }
+    title.textContent = t;
+    msg.textContent = m;
+    continueBtn.style.display = "inline-block";
+  }
+
+  if(status === "success" && valId && tranId){
+    /* verify with backend */
+    fetch("/sslcommerz-validate", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ val_id: valId, tran_id: tranId })
+    }).then(function(r){ return r.json(); }).then(function(data){
+      if(data.validated){
+        var pending = JSON.parse(localStorage.getItem("wt_pending_sslcommerz") || "{}");
+        localStorage.removeItem("wt_pending_sslcommerz");
+        set("success", "Payment confirmed", "Your SSLCOMMERZ payment was successful. Thank you for your order.");
+        if(pending && pending.tranId) orderId.textContent = "Transaction: " + tranId;
+        WT.Cart.items = [];
+        WT.Cart.save();
+        WT.toast({ title: "Order confirmed", text: "Your payment was received via SSLCOMMERZ." });
+      } else {
+        set("fail", "Payment not verified", "We couldn't verify your payment. Please contact support with your transaction ID: " + tranId);
+        orderId.textContent = "Transaction: " + tranId;
+      }
+    }).catch(function(){
+      set("fail", "Verification error", "Unable to verify payment. Transaction ID: " + tranId);
+      orderId.textContent = "Transaction: " + tranId;
+    });
+  } else if(status === "fail"){
+    set("fail", "Payment failed", "Your SSLCOMMERZ payment was not successful. Please try again or choose another payment method.");
+  } else if(status === "cancel"){
+    set("fail", "Payment cancelled", "You cancelled the payment. Your cart is still intact.");
+  } else {
+    set("fail", "Unknown status", "We couldn't determine your payment status.");
+  }
+})();
+</script>
+</body>
+</html>

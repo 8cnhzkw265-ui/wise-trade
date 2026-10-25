@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Charging equipment">
+<defs>
+<linearGradient id="pg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a2b1f"/><stop offset="1" stop-color="#0d1a12"/></linearGradient>
+<radialGradient id="pglow" cx=".5" cy=".42" r=".5"><stop offset="0" stop-color="#3fbf87" stop-opacity=".28"/><stop offset="1" stop-color="#3fbf87" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="900" fill="url(#pg)"/>
+<rect width="1200" height="900" fill="url(#pglow)"/>
+<g opacity=".3" stroke="#3fbf87" stroke-width="2" fill="none">
+<path d="M0 640h1200M0 700h1200M0 760h1200M0 820h1200"/>
+</g>
+<!-- charger brick -->
+<g transform="translate(420 250)">
+<rect width="300" height="300" rx="52" fill="#0f1c14" stroke="#2f4a35" stroke-width="3"/>
+<rect x="40" y="40" width="220" height="220" rx="34" fill="#152a1e"/>
+<rect x="76" y="86" width="148" height="12" rx="6" fill="#3fbf87" opacity=".8"/>
+<rect x="76" y="118" width="96" height="9" rx="4" fill="#3fbf87" opacity=".4"/>
+<g fill="#e8e2d2">
+<rect x="76" y="164" width="40" height="13" rx="6.5"/><rect x="140" y="164" width="40" height="13" rx="6.5"/>
+<rect x="76" y="196" width="40" height="13" rx="6.5"/><rect x="140" y="196" width="40" height="13" rx="6.5"/>
+</g>
+<path d="M256 62v90" stroke="#e8e2d2" stroke-width="9" stroke-linecap="round"/>
+<circle cx="256" cy="170" r="9" fill="#d98a2b"/>
+</g>
+<!-- cable -->
+<path d="M720 560c120-90 210 60 330-30" fill="none" stroke="#1d2b20" stroke-width="16" stroke-linecap="round"/>
+<path d="M720 560c120-90 210 60 330-30" fill="none" stroke="#3fbf87" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+<rect x="1030" y="510" width="52" height="30" rx="8" fill="#e8e2d2" transform="rotate(-14 1056 525)"/>
+<circle cx="230" cy="700" r="54" fill="none" stroke="#3fbf87" stroke-width="3" opacity=".35"/>
+<circle cx="230" cy="700" r="20" fill="#3fbf87" opacity=".5"/>
+</svg>

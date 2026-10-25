@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Desk organizers">
+<defs>
+<linearGradient id="o-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6dcc8"/><stop offset="1" stop-color="#cfc2a8"/></linearGradient>
+<linearGradient id="o-wood" x1="0" y1="0" x2="0.2" y2="1"><stop offset="0" stop-color="#b5814b"/><stop offset="1" stop-color="#8b5a2b"/></linearGradient>
+<linearGradient id="o-steel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3d40"/><stop offset="1" stop-color="#1c1e20"/></linearGradient>
+</defs>
+<rect width="1200" height="900" fill="url(#o-bg)"/>
+<ellipse cx="600" cy="740" rx="400" ry="52" fill="#6b5a3c" opacity=".3"/>
+<rect x="240" y="300" width="720" height="400" rx="34" fill="url(#o-wood)"/>
+<rect x="240" y="300" width="720" height="400" rx="34" fill="none" stroke="#7a4f28" stroke-width="4"/>
+<rect x="278" y="336" width="644" height="328" rx="20" fill="#a8743f"/>
+<rect x="278" y="336" width="644" height="328" rx="20" fill="none" stroke="#8b5f34" stroke-width="3"/>
+<!-- phone on a stand -->
+<g transform="translate(470 470)">
+<rect x="-58" y="-96" width="116" height="196" rx="18" fill="#25272a"/>
+<rect x="-50" y="-88" width="100" height="180" rx="13" fill="#0f1113"/>
+<rect x="-24" y="100" width="48" height="16" rx="6" fill="url(#o-steel)"/>
+</g>
+<!-- small tray -->
+<g transform="translate(700 430)">
+<rect x="-110" y="-70" width="220" height="140" rx="16" fill="url(#o-steel)"/>
+<rect x="-92" y="-52" width="184" height="104" rx="10" fill="#2a2d30"/>
+<rect x="-92" y="-52" width="184" height="104" rx="10" fill="#fff" opacity=".05"/>
+</g>
+<!-- keys -->
+<g transform="translate(700 620)">
+<circle cx="0" cy="0" r="26" fill="none" stroke="#c9a86a" stroke-width="7"/>
+<path d="M24 12l52 26" stroke="#c9a86a" stroke-width="7" stroke-linecap="round"/>
+<path d="M60 34l14-10M74 42l12-9" stroke="#c9a86a" stroke-width="6" stroke-linecap="round"/>
+</g>
+</svg>

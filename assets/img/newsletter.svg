@@ -1,0 +1,268 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Your products: Anker MagGo 10K Slim, Baseus Qi2 22.5W, LISEN 100W, USB-C to Lightning cables, Haze on-ear headphones, Core Daypack and Oraimo Watch 6 Pro">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3ecdb"/>
+      <stop offset="1" stop-color="#e6dcc4"/>
+    </linearGradient>
+    <linearGradient id="surface" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6efde"/>
+      <stop offset="1" stop-color="#e9dcc0"/>
+    </linearGradient>
+    <linearGradient id="tray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dcc7a3"/>
+      <stop offset="1" stop-color="#c7a97f"/>
+    </linearGradient>
+    <linearGradient id="trayIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#cdb28d"/>
+      <stop offset="1" stop-color="#b6976a"/>
+    </linearGradient>
+
+    <linearGradient id="pwrMatte" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3eede"/>
+      <stop offset="1" stop-color="#c8bda2"/>
+    </linearGradient>
+    <linearGradient id="pwrScreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f4c33"/>
+      <stop offset="1" stop-color="#0a3324"/>
+    </linearGradient>
+
+    <linearGradient id="slimGraphite" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#61646a"/>
+      <stop offset="1" stop-color="#2b2d31"/>
+    </linearGradient>
+
+    <linearGradient id="lisenAlu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d8dcdc"/>
+      <stop offset="1" stop-color="#9aa0a4"/>
+    </linearGradient>
+
+    <linearGradient id="cableNylon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f1f23"/>
+      <stop offset="1" stop-color="#3a3a3e"/>
+    </linearGradient>
+    <linearGradient id="cableNylonRed" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c0392b"/>
+      <stop offset="1" stop-color="#8a261d"/>
+    </linearGradient>
+
+    <linearGradient id="cup" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f1e7"/>
+      <stop offset="1" stop-color="#d4cdbd"/>
+    </linearGradient>
+    <linearGradient id="pad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9cfc2"/>
+      <stop offset="1" stop-color="#b8ad9a"/>
+    </linearGradient>
+
+    <linearGradient id="pack" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#242528"/>
+      <stop offset="1" stop-color="#0e0f11"/>
+    </linearGradient>
+    <linearGradient id="packFront" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2d2f32"/>
+      <stop offset="1" stop-color="#131416"/>
+    </linearGradient>
+
+    <linearGradient id="watchFace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e4d9c3"/>
+      <stop offset="1" stop-color="#cdc0a6"/>
+    </linearGradient>
+
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#000" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2"/>
+    </filter>
+
+    <symbol id="tile" viewBox="0 0 240 200">
+      <rect x="1" y="1" width="238" height="198" rx="14" fill="#ffffff" stroke="#e0d6c0" stroke-width="1.5"/>
+      <rect x="8" y="8" width="224" height="184" rx="10" fill="#fbf7ec"/>
+    </symbol>
+
+    <symbol id="label" viewBox="0 0 220 28">
+      <rect x="0" y="2" width="220" height="24" rx="12" fill="#111111"/>
+      <rect x="6" y="6" width="208" height="16" rx="8" fill="#1a1a1a"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="#ffffff" opacity="0.05"/>
+
+  <!-- Surface well -->
+  <ellipse cx="600" cy="668" rx="560" ry="70" fill="url(#shadow)"/>
+  <rect x="96" y="128" width="1008" height="468" rx="50" fill="url(#tray)"/>
+  <rect x="96" y="128" width="1008" height="468" rx="50" fill="none" stroke="#a5885c" stroke-width="3"/>
+  <rect x="142" y="172" width="916" height="380" rx="34" fill="url(#trayIn)"/>
+  <rect x="142" y="172" width="916" height="380" rx="34" fill="none" stroke="#b18f61" stroke-width="2"/>
+  <rect x="150" y="180" width="900" height="364" rx="30" fill="url(#surface)"/>
+
+  <!-- Tile 1: Anker MagGo 10K Slim -->
+  <g transform="translate(178 206)">
+    <use href="#tile" x="0" y="0" width="240" height="200"/>
+    <g transform="translate(120 88)">
+      <ellipse cx="0" cy="70" rx="78" ry="12" fill="#000" opacity="0.18"/>
+      <rect x="-70" y="-78" width="140" height="162" rx="26" fill="url(#pwrMatte)"/>
+      <rect x="-70" y="-78" width="140" height="162" rx="26" fill="none" stroke="#b9ad92" stroke-width="2"/>
+      <rect x="-56" y="-60" width="112" height="56" rx="16" fill="url(#pwrScreen)"/>
+      <g stroke="#a9d4b6" stroke-width="3" stroke-linecap="round">
+        <path d="M-30 -32v12M-8 -32v12M14 -32v12M36 -32v12"/>
+      </g>
+      <circle cx="-44" cy="-2" r="4" fill="#7a7a82"/>
+      <circle cx="-44" cy="-2" r="2" fill="#1c1c20"/>
+      <rect x="-32" y="36" width="64" height="16" rx="8" fill="#9a9a9e"/>
+      <rect x="-32" y="36" width="64" height="4" rx="2" fill="#6a6a6e"/>
+    </g>
+    <use href="#label" x="10" y="168" width="220" height="28"/>
+    <text x="110" y="186" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.3">Anker MagGo 10K Slim</text>
+    <text x="214" y="186" text-anchor="end" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$89.00</text>
+  </g>
+
+  <!-- Tile 2: Baseus Qi2 22.5W -->
+  <g transform="translate(424 206)">
+    <use href="#tile" x="0" y="0" width="240" height="200"/>
+    <g transform="translate(120 82)">
+      <ellipse cx="0" cy="74" rx="72" ry="11" fill="#000" opacity="0.16"/>
+      <rect x="-62" y="-74" width="124" height="160" rx="24" fill="#f1ece1"/>
+      <rect x="-62" y="-74" width="124" height="160" rx="24" fill="none" stroke="#cdbfa6" stroke-width="2"/>
+      <rect x="-50" y="-60" width="100" height="40" rx="12" fill="url(#pwrScreen)"/>
+      <circle cx="0" cy="0" r="18" fill="#1a6f3c"/>
+      <circle cx="0" cy="0" r="10" fill="#7acc92"/>
+      <circle cx="0" cy="0" r="4" fill="#0f4c33"/>
+      <rect x="-34" y="24" width="68" height="14" rx="6" fill="#c7b99a"/>
+      <rect x="-30" y="30" width="60" height="3" rx="1.5" fill="#8a7d5d"/>
+    </g>
+    <use href="#label" x="10" y="168" width="220" height="28"/>
+    <text x="110" y="186" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.3">Baseus Qi2 22.5W</text>
+    <text x="214" y="186" text-anchor="end" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$59.00</text>
+  </g>
+
+  <!-- Tile 3: LISEN 100W -->
+  <g transform="translate(670 206)">
+    <use href="#tile" x="0" y="0" width="240" height="200"/>
+    <g transform="translate(122 92)">
+      <ellipse cx="0" cy="62" rx="80" ry="10" fill="#000" opacity="0.16"/>
+      <rect x="-74" y="-70" width="148" height="144" rx="22" fill="url(#lisenAlu)"/>
+      <rect x="-74" y="-70" width="148" height="144" rx="22" fill="none" stroke="#7a7f84" stroke-width="2"/>
+      <rect x="-62" y="-58" width="124" height="74" rx="12" fill="#181a1d"/>
+      <rect x="-54" y="-50" width="108" height="10" rx="3" fill="#3a3d41"/>
+      <g fill="#c7d2d8">
+        <rect x="-50" y="-30" width="18" height="12" rx="2"/>
+        <rect x="-26" y="-30" width="18" height="12" rx="2"/>
+        <rect x="-2" y="-30" width="18" height="12" rx="2"/>
+        <rect x="22" y="-30" width="18" height="12" rx="2"/>
+      </g>
+      <rect x="-50" y="-8" width="100" height="10" rx="3" fill="#3a3d41"/>
+      <rect x="-70" y="42" width="140" height="14" rx="6" fill="#4a4d51"/>
+    </g>
+    <use href="#label" x="10" y="168" width="220" height="28"/>
+    <text x="110" y="186" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.3">LISEN 100W</text>
+    <text x="214" y="186" text-anchor="end" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$99.00</text>
+  </g>
+
+  <!-- Tile 4: USB-C to Lightning cables -->
+  <g transform="translate(916 206)">
+    <use href="#tile" x="0" y="0" width="240" height="200"/>
+    <g transform="translate(120 92)">
+      <ellipse cx="0" cy="66" rx="80" ry="10" fill="#000" opacity="0.14"/>
+      <g transform="translate(-64 -18)">
+        <rect x="-24" y="0" width="48" height="60" rx="10" fill="url(#cableNylon)"/>
+        <rect x="-24" y="0" width="48" height="60" rx="10" fill="none" stroke="#5a5a5e" stroke-width="1.5"/>
+        <rect x="-20" y="10" width="40" height="6" rx="2" fill="#8a8a90"/>
+        <rect x="-20" y="24" width="40" height="6" rx="2" fill="#8a8a90"/>
+        <path d="M24 20 C90 6 110 40 78 66" fill="none" stroke="url(#cableNylonRed)" stroke-width="9" stroke-linecap="round"/>
+        <path d="M24 32 C80 28 96 56 72 74" fill="none" stroke="url(#cableNylonRed)" stroke-width="9" stroke-linecap="round"/>
+        <path d="M24 44 C72 52 84 72 60 86" fill="none" stroke="url(#cableNylonRed)" stroke-width="9" stroke-linecap="round"/>
+        <path d="M24 20 C90 6 110 40 78 66" fill="none" stroke="#7a2419" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+      </g>
+      <g transform="translate(64 -18)">
+        <rect x="-24" y="0" width="48" height="60" rx="10" fill="url(#cableNylon)"/>
+        <rect x="-24" y="0" width="48" height="60" rx="10" fill="none" stroke="#5a5a5e" stroke-width="1.5"/>
+        <rect x="-20" y="10" width="40" height="6" rx="2" fill="#8a8a90"/>
+        <rect x="-20" y="24" width="40" height="6" rx="2" fill="#8a8a90"/>
+        <path d="M24 18 C70 30 78 58 50 84" fill="none" stroke="url(#cableNylon)" stroke-width="9" stroke-linecap="round"/>
+        <path d="M24 30 C62 42 66 66 44 88" fill="none" stroke="url(#cableNylon)" stroke-width="9" stroke-linecap="round"/>
+        <path d="M24 18 C70 30 78 58 50 84" fill="none" stroke="#5a5a5e" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+      </g>
+    </g>
+    <use href="#label" x="10" y="168" width="220" height="28"/>
+    <text x="110" y="186" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.3">USB-C to Lightning</text>
+    <text x="214" y="186" text-anchor="end" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$18.00</text>
+  </g>
+
+  <!-- Tile 5: Haze on-ear headphones -->
+  <g transform="translate(178 426)">
+    <use href="#tile" x="0" y="0" width="240" height="200"/>
+    <g transform="translate(120 92)">
+      <ellipse cx="-78" cy="0" rx="58" ry="48" fill="url(#cup)"/>
+      <ellipse cx="-78" cy="0" rx="58" ry="48" fill="none" stroke="#c6c0b2" stroke-width="2"/>
+      <ellipse cx="-78" cy="0" rx="40" ry="32" fill="#2c2c30"/>
+      <rect x="-96" y="-8" width="32" height="12" rx="5" fill="#4a4a4e"/>
+      <ellipse cx="78" cy="0" rx="58" ry="48" fill="url(#cup)"/>
+      <ellipse cx="78" cy="0" rx="58" ry="48" fill="none" stroke="#c6c0b2" stroke-width="2"/>
+      <ellipse cx="78" cy="0" rx="40" ry="32" fill="#2c2c30"/>
+      <rect x="64" y="-8" width="32" height="12" rx="5" fill="#4a4a4e"/>
+      <path d="M-42 -4 C-14 -44 14 -44 42 -4" fill="none" stroke="#5a4a40" stroke-width="16" stroke-linecap="round"/>
+      <path d="M-42 -4 C-14 -44 14 -44 42 -4" fill="none" stroke="#b9ad92" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+      <path d="M-78 -40 C-60 -2 -96 6 -78 20" fill="none" stroke="#a99a82" stroke-width="1" opacity="0.6"/>
+      <path d="M78 -40 C60 -2 96 6 78 20" fill="none" stroke="#a99a82" stroke-width="1" opacity="0.6"/>
+    </g>
+    <use href="#label" x="10" y="168" width="220" height="28"/>
+    <text x="110" y="186" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.3">Haze On-Ear</text>
+    <text x="214" y="186" text-anchor="end" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$55.00</text>
+  </g>
+
+  <!-- Tile 6: Core Daypack -->
+  <g transform="translate(424 426)">
+    <use href="#tile" x="0" y="0" width="240" height="200"/>
+    <g transform="translate(120 104)">
+      <ellipse cx="0" cy="74" rx="96" ry="12" fill="#000" opacity="0.18"/>
+      <rect x="-116" y="-96" width="232" height="212" rx="32" fill="url(#pack)"/>
+      <rect x="-116" y="-96" width="232" height="212" rx="32" fill="none" stroke="#46474a" stroke-width="2"/>
+      <rect x="-96" y="-70" width="192" height="150" rx="22" fill="url(#packFront)"/>
+      <rect x="-84" y="-56" width="168" height="96" rx="14" fill="#16171a"/>
+      <g fill="#9a9ea4">
+        <rect x="-66" y="-42" width="132" height="6" rx="3"/>
+        <rect x="-50" y="-26" width="100" height="5" rx="2"/>
+      </g>
+      <circle cx="-84" cy="60" r="10" fill="#9a9ea4"/>
+      <circle cx="84" cy="60" r="10" fill="#9a9ea4"/>
+      <rect x="-96" y="-86" width="192" height="20" rx="9" fill="#0f4c33"/>
+      <path d="M-18 -80l6 -6 10 6 -6 6z" fill="#7acc92"/>
+    </g>
+    <use href="#label" x="10" y="168" width="220" height="28"/>
+    <text x="110" y="186" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.3">Core Daypack — Black</text>
+    <text x="214" y="186" text-anchor="end" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$49.00</text>
+  </g>
+
+  <!-- Tile 7: Oraimo Watch 6 Pro -->
+  <g transform="translate(670 426)">
+    <use href="#tile" x="0" y="0" width="240" height="200"/>
+    <g transform="translate(120 96)">
+      <ellipse cx="0" cy="62" rx="44" ry="8" fill="#000" opacity="0.16"/>
+      <rect x="-18" y="-120" width="36" height="70" rx="11" fill="#2a2a30"/>
+      <rect x="-18" y="50" width="36" height="70" rx="11" fill="#2a2a30"/>
+      <circle cx="0" cy="0" r="52" fill="url(#watchFace)"/>
+      <circle cx="0" cy="0" r="52" fill="none" stroke="#b9ad92" stroke-width="2"/>
+      <circle cx="0" cy="0" r="42" fill="#fbf7ec"/>
+      <circle cx="0" cy="0" r="42" fill="none" stroke="#c6bfa8" stroke-width="1.5"/>
+      <g stroke="#4a4a4e" stroke-width="2" stroke-linecap="round">
+        <path d="M0 -30v6M0 22v6M-30 0h6M20 0h6"/>
+      </g>
+      <path d="M0 0l-16 -12" stroke="#2f3134" stroke-width="4" stroke-linecap="round"/>
+      <path d="M0 0l10 16" stroke="#2f3134" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="3" fill="#2f3134"/>
+      <rect x="46" y="-12" width="12" height="20" rx="4" fill="#9a9a9e"/>
+      <rect x="47" y="-10" width="10" height="3" rx="1.5" fill="#6a6a6e"/>
+    </g>
+    <use href="#label" x="10" y="168" width="220" height="28"/>
+    <text x="110" y="186" text-anchor="middle" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.3">Oraimo Watch 6 Pro</text>
+    <text x="214" y="186" text-anchor="end" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$69.00</text>
+  </g>
+
+  <!-- soft top highlight -->
+  <rect width="1200" height="800" fill="#ffffff" opacity="0.05"/>
+</svg>

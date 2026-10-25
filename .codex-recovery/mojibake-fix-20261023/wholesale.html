@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f1e8">
+<title>Wholesale | Wise Trade</title>
+<meta name="description" content="Wholesale trade pricing on Wise Trade chargers, backpacks, audio and watches. 25% below retail, 15-unit minimum.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f4f1e8'/%3E%3Cpath d='M8 22V10l8 8 8-8v12' fill='none' stroke='%232b2721' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body data-tier="wholesale">
+
+<div id="icon-sprite" hidden aria-hidden="true"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="progress" aria-hidden="true"><div class="progress__bar" data-progress></div></div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" data-header>
+  <div class="container header__inner">
+    <a class="brand" href="wholesale.html" aria-label="Wise Trade wholesale â€” home">Wise Trade</a>
+
+    <div class="header__right">
+    <nav class="nav" aria-label="Primary">
+      <div class="nav__item"><a class="nav__link" href="wholesale.html?c=chargers">Chargers</a></div>
+      <div class="nav__item"><a class="nav__link" href="wholesale.html?c=backpacks">Backpacks</a></div>
+      <div class="nav__item"><a class="nav__link" href="wholesale.html?c=audio">Audio</a></div>
+      <div class="nav__item"><a class="nav__link" href="wholesale.html?c=watches">Watches</a></div>
+      <div class="nav__item"><a class="nav__link" href="shop.html">Retail</a></div>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn" data-open="search" aria-label="Search" title="Search"><svg><use href="#i-search"/></svg></button>
+      <button class="icon-btn" data-open="account" aria-label="Account" title="Account"><svg><use href="#i-user"/></svg></button>
+      <button class="icon-btn" data-open="cart" aria-label="Open cart" title="Cart">
+        <svg><use href="#i-bag"/></svg>
+        <span class="icon-btn__count" data-cart-count data-count="0" aria-live="polite" aria-label="Items in cart">0</span>
+      </button>
+      <button class="icon-btn nav-toggle" data-open="mnav" aria-label="Open menu" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+    </div>
+    </div>
+  </div>
+</header>
+
+
+<main id="main">
+  <div class="container">
+
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="wholesale.html">Home</a>
+      <svg><use href="#i-chevron" style="transform:rotate(-90deg)"/></svg>
+      <span aria-current="page" data-crumb>Wholesale</span>
+    </nav>
+
+    <!-- collection header: huge serif left, description right -->
+    <p class="eyebrow" style="margin-bottom:12px">Trade pricing Â· B2B</p>
+    <div class="collhead">
+      <h1 class="collhead__title" data-collection-title>Wholesale</h1>
+      <p class="collhead__desc" data-collection-blurb>Power, audio, watches and carry at trade pricing â€” 25% below retail, minimum 15 units per product.</p>
+    </div>
+    <div class="tradebar">
+      <span class="tradebar__item"><b>25% off retail</b> on every line</span>
+      <span class="tradebar__item"><b>15-unit</b> minimum per product</span>
+      <span class="tradebar__item">Separate wholesale cart &amp; checkout</span>
+    </div>
+
+    <!-- toolbar: text dropdowns + count / sort / view -->
+    <div class="toolbar">
+      <div class="toolbar__group">
+        <div class="dd" data-dd>
+          <button class="dd__btn" data-dd-btn aria-expanded="false" aria-haspopup="true">Availability <svg><use href="#i-chevron"/></svg></button>
+          <div class="dd__panel" role="menu" data-dd-panel></div>
+        </div>
+        <div class="dd" data-dd>
+          <button class="dd__btn" data-dd-btn aria-expanded="false" aria-haspopup="true">Price <svg><use href="#i-chevron"/></svg></button>
+          <div class="dd__panel" role="menu" data-dd-panel></div>
+        </div>
+        <div class="dd" data-dd>
+          <button class="dd__btn" data-dd-btn aria-expanded="false" aria-haspopup="true">Color <svg><use href="#i-chevron"/></svg></button>
+          <div class="dd__panel" role="menu" data-dd-panel></div>
+        </div>
+      </div>
+
+      <div class="toolbar__group">
+        <span class="toolbar__count" data-result-count>0 items</span>
+        <div class="dd" data-dd>
+          <button class="sortbtn" data-dd-btn aria-expanded="false" aria-haspopup="true" data-sort-label>Sort <svg><use href="#i-chevron"/></svg></button>
+          <div class="dd__panel" role="menu" data-dd-panel></div>
+        </div>
+        <div class="seg" role="group" aria-label="Layout">
+          <button data-view="grid" aria-pressed="true" aria-label="Grid view"><svg><use href="#i-grid"/></svg></button>
+          <button data-view="list" aria-pressed="false" aria-label="List view"><svg><use href="#i-list"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pgrid" data-results></div>
+    <div class="pager" data-pager></div>
+
+  </div>  </main>
+
+<!-- ============ FOOTER (sage) ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="brand" href="wholesale.html">Wise Trade</a>
+        <p class="footer__tagline">Considered desk goods for people who trade for a living. Designed in Rotterdam, made in small batches.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><svg><use href="#i-facebook"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg><use href="#i-tiktok"/></svg></a>
+          <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Wholesale</h4>
+        <ul>
+          <li><a href="wholesale.html">Trade catalogue</a></li>
+          <li><a href="wholesale.html?c=chargers">Chargers</a></li>
+          <li><a href="wholesale.html?c=backpacks">Backpacks</a></li>
+          <li><a href="wholesale.html?c=audio">Audio</a></li>
+          <li><a href="wholesale.html?c=watches">Watches</a></li>
+          <li><a href="shop.html">Retail store</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Policies</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="wholesale.html">Trade pricingme</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#journal">Journal</a></li>
+          <li><a href="#">Stockists</a></li>
+          <li><a href="#">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; <span data-year>2026</span> Wise Trade B.V.</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+      </nav>
+      <div class="footer__pay" aria-label="Accepted payment methods">
+        <span>VISA</span><span>MC</span><span>AMEX</span><span>PAYPAL</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ OVERLAYS ============ -->
+<div class="scrim" data-scrim></div>
+
+<aside class="drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" data-drawer="cart" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="cart-title">Wholesale cart <small data-cart-summary-label></small></h2>
+    <button class="icon-btn" data-close aria-label="Close cart"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body" data-cart-body></div>
+  <div class="drawer__foot" data-cart-foot hidden>
+    <div class="freebar">
+      <div class="freebar__track"><div class="freebar__fill" data-free-fill style="width:0%"></div></div>
+      <p class="freebar__text" data-free-text></p>
+    </div>
+    <div class="totals">
+      <div class="totals__row"><span>Subtotal</span><span data-cart-subtotal>$0.00</span></div>
+      <div class="totals__row"><span>Shipping</span><span data-cart-shipping>Free</span></div>
+      <div class="totals__row totals__row--grand"><span>Total</span><span data-cart-total>$0.00</span></div>
+    </div>
+    <a class="btn btn--block btn--lg" href="wholesale-checkout.html" data-magnetic="0.18"><svg><use href="#i-lock"/></svg> Wholesale checkout</a>
+    <p class="search__hint" style="text-align:center">Trade order &middot; 15-unit minimum per product</p>
+  </div>
+</aside>
+
+<aside class="drawer drawer--top" id="search-drawer" role="dialog" aria-modal="true" aria-labelledby="search-title" data-drawer="search" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="search-title">Search</h2>
+    <button class="icon-btn" data-close aria-label="Close search"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <form data-search-form role="search">
+      <div class="search__field">
+        <svg><use href="#i-search"/></svg>
+        <label for="q" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search products</label>
+        <input id="q" type="search" placeholder="What are you looking for?" autocomplete="off" spellcheck="false" data-search-input>
+      </div>
+    </form>
+    <div style="margin-top:20px" data-search-results></div>
+  </div>
+</aside>
+
+<aside class="drawer drawer--left" id="mnav-drawer" role="dialog" aria-modal="true" aria-label="Menu" data-drawer="mnav" hidden>
+  <div class="drawer__head">
+    <span class="brand">Wise Trade</span>
+    <button class="icon-btn" data-close aria-label="Close menu"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <nav class="mnav" aria-label="Mobile">
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html?c=chargers">Chargers</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html?c=backpacks">Backpacks</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html?c=audio">Audio</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html?c=watches">Watches</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="wholesale.html">Wholesale catalogue</a></div></div>
+      <div class="mnav__group"><div style="border:0"><a class="mnav__toggle" href="shop.html">Retail store</a></div></div>
+    </nav>
+    <div class="mnav__foot">
+      <a class="btn btn--block" href="shop.html">Shop all products</a>
+      <div class="mnav__social">
+        <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+        <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg><use href="#i-linkedin"/></svg></a>
+      </div>
+      <p class="search__hint" style="margin-top:6px">60-day returns &middot; Lifetime repairs</p>
+    </div>
+  </div>
+</aside>
+
+<aside class="drawer" id="account-drawer" role="dialog" aria-modal="true" aria-labelledby="account-title" data-drawer="account" hidden>
+  <div class="drawer__head">
+    <h2 class="drawer__title" id="account-title">Sign in</h2>
+    <button class="icon-btn" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <form data-account-form style="display:grid;gap:16px">
+      <div>
+        <label for="acc-email" style="display:block;font-size:.8125rem;font-weight:500;margin-bottom:7px">Email</label>
+        <input id="acc-email" type="email" required autocomplete="email" placeholder="you@desk.com" style="width:100%;padding:14px 18px;border:1px solid var(--stroke-strong);border-radius:var(--radius-pill);background:var(--surface);outline:none">
+      </div>
+      <div>
+        <label for="acc-pass" style="display:block;font-size:.8125rem;font-weight:500;margin-bottom:7px">Password</label>
+        <input id="acc-pass" type="password" required autocomplete="current-password" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" style="width:100%;padding:14px 18px;border:1px solid var(--stroke-strong);border-radius:var(--radius-pill);background:var(--surface);outline:none">
+      </div>
+      <button class="btn btn--block" type="submit">Sign in</button>
+      <p class="search__hint" style="text-align:center"><a href="#" style="text-decoration:underline;text-underline-offset:3px">Forgot password?</a></p>
+    </form>
+  </div>
+</aside>
+
+<div class="toasts" data-toasts role="status" aria-live="polite" aria-atomic="false"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/shop.js"></script>
+</body>
+</html>

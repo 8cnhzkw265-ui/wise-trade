@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>Product Admin | Wise Trade</title>
+<meta name="description" content="Wise Trade product administration — add, edit and delete catalogue products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="icon" href="assets/img/logo-mark.png">
+<style>
+.admin-page { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter) var(--sp-10); }
+.admin-header { border-bottom: 1px solid var(--stroke); padding: var(--sp-4) 0; margin-bottom: var(--sp-7); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.admin-header__brand { font-family: var(--font-logo); font-weight: 800; font-size: 1.75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ink); margin: 0; display: inline-flex; align-items: center; gap: 10px; }
+.admin-header__brand img { width: 32px; height: 32px; display: block; }
+.admin-hero { margin-bottom: var(--sp-8); }
+.admin-hero__title { font-family: var(--font-display); font-weight: 800; font-size: 2rem; letter-spacing: .02em; text-transform: uppercase; color: var(--ink); margin: 0 0 var(--sp-2) 0; line-height: 1.1; }
+.admin-hero__sub { margin: 0; font-size: .9375rem; color: var(--muted); }
+.admin-hero__actions { margin-top: var(--sp-5); display: flex; gap: 12px; flex-wrap: wrap; }
+.btn--outline { border: 1px solid var(--stroke-strong); color: var(--ink); background: var(--canvas); }
+.btn--outline:hover { border-color: var(--ink); background: var(--canvas-2); }
+.admin-grid { display: grid; gap: var(--sp-7); }
+@media (min-width: 1000px) { .admin-grid { grid-template-columns: 460px 1fr; } }
+.admin-panel { border: 1px solid var(--stroke); border-radius: var(--radius-lg); background: var(--canvas); overflow: hidden; }
+.admin-panel__head { padding: var(--sp-5) var(--sp-6); border-bottom: 1px solid var(--stroke); display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.admin-panel__head h2 { font-family: var(--font-mono); font-size: .875rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); margin: 0; }
+.admin-panel__count { font-size: .875rem; color: var(--muted); margin-left: 8px; font-family: var(--font-body); font-weight: 500; }
+.admin-panel__body { padding: var(--sp-5) var(--sp-6); }
+.admin-panel--form .admin-panel__body { padding-bottom: var(--sp-4); }
+.admin-form { display: grid; gap: var(--sp-4); }
+.admin-field { display: grid; gap: var(--sp-1); }
+.admin-field label { font-family: var(--font-mono); font-size: .6875rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.admin-field .req { color: var(--sale); margin-left: 2px; }
+.admin-field input, .admin-field select, .admin-field textarea { width: 100%; padding: 10px 14px; border: 1px solid var(--stroke-strong); border-radius: var(--radius-sm); background: var(--canvas-2); color: var(--ink); font: inherit; font-size: .9375rem; }
+.admin-field input:focus, .admin-field select:focus, .admin-field textarea:focus { outline: none; border-color: var(--ink); }
+.admin-field textarea { resize: vertical; min-height: 88px; font-family: var(--font-body); }
+.admin-field .field__hint { font-size: .75rem; color: var(--faint); margin-top: 4px; }
+.admin-row { display: grid; gap: var(--sp-3); grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 600px) { .admin-row { grid-template-columns: 1fr 1fr; align-items: start; } }
+.admin-row .col-span { grid-column: 1 / -1; }
+details.admin-advanced { border: 1px solid var(--stroke); border-radius: var(--radius-sm); overflow: hidden; margin-top: var(--sp-2); }
+details.admin-advanced summary { padding: 10px 14px; cursor: pointer; font-family: var(--font-mono); font-size: .75rem; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; color: var(--muted); background: var(--canvas-2); list-style: none; border-bottom: 1px solid var(--stroke); }
+details.admin-advanced summary::-webkit-details-marker { display: none; }
+details.admin-advanced .admin__inner { padding: var(--sp-4); display: grid; gap: var(--sp-3); }
+.admin-form__foot { display: flex; gap: 10px; margin-top: var(--sp-1); flex-wrap: wrap; border-top: 1px solid var(--stroke); padding-top: var(--sp-4); }
+.admin-form__foot .btn { width: auto; flex: 1 1 170px; }
+@media (min-width: 600px) { .admin-form__foot .btn { flex: 0 0 auto; } }
+.admin-empty { grid-column: 1 / -1; text-align: center; padding: var(--sp-9) var(--sp-4); color: var(--muted); }
+.admin-empty b { color: var(--ink); }
+table.admin-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.admin-table th, .admin-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--stroke); vertical-align: top; }
+.admin-table th { color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-size: .7rem; font-family: var(--font-mono); font-weight: 600; white-space: nowrap; }
+.admin-table td.id { font-family: var(--font-mono); font-size: .8125rem; width: 140px; color: var(--ink-2); }
+.admin-table img.admin-thumb { width: 36px; height: 36px; object-fit: cover; border-radius: var(--radius-sm); background: var(--canvas-2); border: 1px solid var(--stroke); display: block; }
+.admin-table .cat { font-family: var(--font-mono); font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; display: block; }
+.admin-table .name { font-weight: 600; color: var(--ink); }
+.admin-table .price { font-variant-numeric: tabular-nums; color: var(--ink); }
+.admin-table .stock { font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.admin-table .sku { font-family: var(--font-mono); font-size: .8125rem; color: var(--ink-2); }
+.admin-table .actions { display: flex; gap: 8px; }
+.admin-table .actions button { padding: 6px 12px; font-size: .8125rem; border-radius: var(--radius-sm); border: 1px solid var(--stroke-strong); background: var(--canvas-2); color: var(--ink); cursor: pointer; font-family: var(--font-body); font-weight: 500; }
+.admin-table .actions button:hover { border-color: var(--ink); }
+.admin-table .actions button[data-delete] { color: var(--sale); border-color: var(--sale); background: transparent; }
+.admin-table .actions button[data-delete]:hover { background: var(--sale); color: #fff; border-color: var(--sale); }
+.admin-note { grid-column: 1 / -1; font-size: .8125rem; color: var(--muted); border-top: 1px solid var(--stroke); padding-top: var(--sp-4); margin-top: var(--sp-4); }
+.admin-note b { color: var(--ink); }
+.admin-note code { font-family: var(--font-mono); font-size: .8125rem; background: var(--canvas-2); padding: 1px 6px; border-radius: var(--radius-xs); }
+.toast { background: var(--ink); color: #ffffff; }
+
+/* --- Bulk import overlay --- */
+.import-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,.55); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center; z-index: 100;
+  color: var(--canvas); font-family: var(--font-body);
+}
+.import-panel { background: var(--canvas); padding: var(--sp-6) var(--sp-5);
+  border-radius: var(--radius-lg); width: 90%; max-width: 480px; text-align: center;
+  border: 1px solid var(--stroke); color: var(--ink); }
+.import-panel h3 { margin: 0 0 var(--sp-3); font-size: 1.25rem; }
+.import-panel p { margin: 0 0 var(--sp-5); font-size: .9375rem; color: var(--muted); }
+.import-panel .progress { width: 100%; height: 8px; background: var(--canvas-2); border-radius: var(--radius-sm); overflow: hidden; margin: var(--sp-4) 0; }
+.import-panel .progress-bar { height: 100%; width: 0%; background: var(--ink); transition: width .3s ease; }
+.import-panel .progress-text { font-size: .75rem; color: var(--muted); margin-top: var(--sp-2); }
+.import-panel .btn { margin-top: var(--sp-3); }
+
+/* --- Modal dimmer (if needed) --- */
+.dimmer { position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 90; display: none; align-items: center; justify-content: center; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div class="admin-page">
+  <header class="admin-header">
+    <span class="admin-header__brand"><img src="assets/img/logo-mark.png" alt="">WISE TRADE</span>
+    <a class="btn btn--dark" href="shop.html">Back to shop</a>
+    <button class="btn btn--dark" type="button" data-action="import-zip">Import Zip (CSV + Images)</button>
+    <input type="file" id="admin-zip-input" accept=".zip" hidden>
+  </header>
+
+  <section class="admin-hero">
+    <h1 class="admin-hero__title">Product Admin</h1>
+    <p class="admin-hero__sub">Add, edit and delete catalogue products. Stored in the browser (<code>localStorage</code>) until a backend is wired up.</p>
+    <div class="admin-hero__actions">
+      <a class="btn btn--outline" href="shop.html">View shop</a>
+      <button class="btn btn--dark" type="button" data-action="reset">Reset form</button>
+    </div>
+  </section>
+
+  <div class="admin-grid">
+    <section class="admin-panel admin-panel--form">
+      <div class="admin-panel__head">
+        <h2>Product</h2>
+      </div>
+      <div class="admin-panel__body">
+        <form id="admin-form" data-admin-form novalidate class="admin-form">
+          <input type="hidden" id="admin-editing-id">
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="admin-id">Product id <span class="req">*</span></label>
+              <input id="admin-id" type="text" required placeholder="anker-maggo-10k" autocomplete="off">
+              <p class="field__hint">Unique key used in URLs and data lookups.</p>
+            </div>
+            <div class="admin-field">
+              <label for="admin-name">Name <span class="req">*</span></label>
+              <input id="admin-name" type="text" required placeholder="Anker MagGo 10K" autocomplete="off">
+            </div>
+          </div>
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="admin-cat">Category</label>
+              <input id="admin-cat" type="text" placeholder="chargers" autocomplete="off">
+              <p class="field__hint">Any category — new ones are created automatically on the frontend.</p>
+            </div>
+            <div class="admin-field">
+              <label for="admin-sku">SKU</label>
+              <input id="admin-sku" type="text" placeholder="WT-CHG-001">
+            </div>
+          </div>
+          <div class="admin-row">
+            <div class="admin-field">
+              <label for="admin-price">Price (BDT)</label>
+              <input id="admin-price" type="number" step="0.01" min="0" placeholder="89">
+            </div>
+            <div class="admin-field">
+              <label for="admin-compare">Compare at (BDT)</label>
+              <input id="admin-compare" type="number" step="0.01" min="0" placeholder="99">
+              <p class="field__hint">Optional. Shown as a strikethrough when set.</p>
+            </div>
+            <div class="admin-field">
+              <label for="admin-stock">Stock</label>
+              <input id="admin-stock" type="number" min="0" placeholder="42">
+            </div>
+          </div>
+          <div class="admin-field col-span">
+            <label for="admin-img">Image file</label>
+            <input id="admin-img" type="text" placeholder="charger-anker-maggo-10k.webp">
+            <p class="field__hint">File in <code>assets/img/</code>, e.g. <code>charger-foo.jpg</code>.</p>
+          </div>
+          <div class="admin-field col-span">
+            <label for="admin-blurb">Blurb</label>
+            <textarea id="admin-blurb" placeholder="Short product description…"></textarea>
+          </div>
+
+          <details class="admin-advanced">
+            <summary>Advanced details</summary>
+            <div class="admin__inner">
+              <div class="admin-row">
+                <div class="admin-field">
+                  <label for="admin-rating">Rating (1–5)</label>
+                  <input id="admin-rating" type="number" step="0.1" min="0" max="5" placeholder="4.8">
+                </div>
+                <div class="admin-field">
+                  <label for="admin-reviews">Reviews</label>
+                  <input id="admin-reviews" type="number" min="0" placeholder="512">
+                </div>
+                <div class="admin-field col-span">
+                  <label for="admin-colors">Colors (comma separated)</label>
+                  <input id="admin-colors" type="text" placeholder="#1f1c18, #e8e2d4">
+                  <p class="field__hint">Shown as colour dots on the product card.</p>
+                </div>
+                <div class="admin-field col-span">
+                  <label for="admin-flags">Flags (comma separated)</label>
+                  <input id="admin-flags" type="text" placeholder="sale, hot, new">
+                  <p class="field__hint">Badges shown on the card, e.g. <code>sale</code>, <code>new</code>, <code>hot</code>.</p>
+                </div>
+              </div>
+              <div class="admin-field col-span">
+                <label for="admin-specs">Specs (JSON)</label>
+                <textarea id="admin-specs" placeholder="{&quot;Capacity&quot;: &quot;10,000 mAh&quot;}"></textarea>
+                <p class="field__hint">JSON object rendered on the product detail page.</p>
+              </div>
+            </div>
+          </details>
+
+          <div class="admin-form__foot">
+            <button type="submit" class="btn btn--dark btn--block" id="admin-submit">Add product</button>
+            <button type="button" class="btn btn--light btn--block" id="admin-delete" hidden>Delete product</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="admin-panel admin-panel--list">
+      <div class="admin-panel__head">
+        <h2>Catalogue <span id="admin-count" class="admin-panel__count">(0)</span></h2>
+        <button class="btn btn--dark" type="button" data-action="reseed">Seed from data.js</button>
+      </div>
+      <div class="admin-panel__body">
+        <div style="overflow:auto;border:1px solid var(--stroke);border-radius:var(--radius-sm);">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th class="id">Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th class="sku">SKU</th>
+                <th style="text-align:right">Price</th>
+                <th style="text-align:right">Stock</th>
+                <th style="width:56px">Image</th>
+                <th style="width:130px">Actions</th>
+              </tr>
+            </thead>
+            <tbody data-product-list></tbody>
+          </table>
+        </div>
+        <p class="admin-empty" hidden>No products yet. Add one using the form, or click <b>Seed from data.js</b> to import the existing catalogue.</p>
+      </div>
+    </section>
+  </div>
+
+  <p class="admin-note"><b>Note:</b> This page uses <code>localStorage</code> as a stand-in database so it works with no server. Click <b>Export catalogue</b> to download a JSON file you can paste into <code>assets/js/data.js</code> as <code>var PRODUCTS = ...</code>. To use a real database, set <code>WT.admin.apiBase</code> in the script and enable the <code>fetch</code> calls marked <b>BACKEND</b>.</p>
+
+  <div style="margin-top: var(--sp-4);">
+    <button class="btn btn--light btn--block" type="button" data-action="export">Export catalogue (JSON)</button>
+  </div>
+</div>
+
+<div class="toasts" data-toasts role="status" aria-live="polite" aria-atomic="false"></div>
+
+<script src="assets/js/data.js"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
+  var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+  function on(el, ev, fn) { if (el) el.addEventListener(ev, fn, false); }
+
+  var WT = window.WT || {};
+  WT.admin = WT.admin || {};
+  WT.admin.apiBase = null;
+  WT.admin.useApi = false;
+  window.WT = WT;
+
+  var STORAGE_KEY = "wt_admin_products";
+
+  var form = $("form[data-admin-form]");
+  var list = $("tbody[data-product-list]");
+  var empty = $(".admin-empty");
+  var countEl = $("#admin-count");
+  var submitBtn = $("#admin-submit");
+  var deleteBtn = $("#admin-delete");
+  var editingInput = $("#admin-editing-id");
+  var fields = {
+    id: $("#admin-id"), name: $("#admin-name"), cat: $("#admin-cat"),
+    sku: $("#admin-sku"), price: $("#admin-price"), compare: $("#admin-compare"),
+    stock: $("#admin-stock"), img: $("#admin-img"), blurb: $("#admin-blurb"),
+    rating: $("#admin-rating"), reviews: $("#admin-reviews"),
+    colors: $("#admin-colors"), flags: $("#admin-flags"), specs: $("#admin-specs")
+  };
+
+  var state = { products: [], editingId: null };
+
+  function load() {
+    var raw;
+    try { raw = localStorage.getItem(STORAGE_KEY); } catch (e) { raw = null; }
+    if (raw) {
+      try { state.products = JSON.parse(raw); } catch (e) { state.products = []; }
+    } else if (WT.PRODUCTS && WT.PRODUCTS.length) {
+      state.products = WT.PRODUCTS.map(normalise);
+      saveQuiet();
+    }
+    if (!Array.isArray(state.products)) state.products = [];
+
+    /* sync prices from the static catalogue (WT.PRODUCTS) so edited BDT
+       prices show in the admin panel even when localStorage has old data */
+    if (WT.PRODUCTS && WT.PRODUCTS.length) {
+      var byId = {};
+      state.products.forEach(function (p) { if (p && p.id) byId[p.id] = p; });
+      WT.PRODUCTS.forEach(function (p) {
+        if (!p || !p.id) return;
+        if (byId[p.id]) {
+          byId[p.id].price = p.price;
+          if (p.compareAt !== undefined) byId[p.id].compareAt = p.compareAt;
+          byId[p.id].name = p.name;
+          byId[p.id].cat = p.cat;
+          byId[p.id].sku = p.sku;
+        } else {
+          state.products.push(normalise(p));
+        }
+      });
+      saveQuiet();
+    }
+  }
+  function save() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.products)); } catch (e) {}
+    render();
+  }
+  function saveQuiet() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.products)); } catch (e) {}
+  }
+  function indexOf(id) {
+    for (var i = 0; i < state.products.length; i++) {
+      if (state.products[i].id === id) return i;
+    }
+    return -1;
+  }
+
+  function normalise(p) {
+    return {
+      id: String(p.id || "").trim(),
+      name: String(p.name || "").trim(),
+      cat: String(p.cat || "chargers").trim() || "chargers",
+      sku: String(p.sku || "").trim(),
+      price: Number(p.price) || 0,
+      compareAt: p.compareAt ? Number(p.compareAt) : "",
+      rating: p.rating ? Number(p.rating) : 0,
+      reviews: p.reviews ? Number(p.reviews) : 0,
+      flags: Array.isArray(p.flags) ? p.flags.slice() : [],
+      colors: Array.isArray(p.colors) ? p.colors.slice() : [],
+      img: String(p.img || "").trim(),
+      blurb: String(p.blurb || "").trim(),
+      specs: p.specs ? (typeof p.specs === "string" ? p.specs : JSON.stringify(p.specs)) : "{}",
+      stock: p.stock ? Number(p.stock) : 0
+    };
+  }
+  function fromForm() {
+    return {
+      id: fields.id.value.trim(),
+      name: fields.name.value.trim(),
+      cat: fields.cat.value,
+      sku: fields.sku.value.trim(),
+      price: Number(fields.price.value) || 0,
+      compareAt: fields.compare.value ? Number(fields.compare.value) : "",
+      rating: fields.rating.value ? Number(fields.rating.value) : 0,
+      reviews: fields.reviews.value ? Number(fields.reviews.value) : 0,
+      flags: fields.flags.value.split(",").map(function (f) { return f.trim(); }).filter(function (f) { return f; }),
+      colors: fields.colors.value.split(",").map(function (c) { return c.trim(); }).filter(function (c) { return c; }),
+      img: fields.img.value.trim(),
+      blurb: fields.blurb.value.trim(),
+      specs: fields.specs.value.trim() || "{}",
+      stock: fields.stock.value ? Number(fields.stock.value) : 0
+    };
+  }
+
+  function render() {
+    countEl.textContent = state.products.length;
+    if (empty) empty.hidden = state.products.length > 0;
+    if (!list) return;
+    list.innerHTML = "";
+    state.products.forEach(function (p) {
+      var tr = document.createElement("tr");
+      var tdId = document.createElement("td"); tdId.className = "id"; tdId.textContent = p.id;
+      var tdName = document.createElement("td"); var b = document.createElement("b"); b.textContent = p.name; b.className = "name"; tdName.appendChild(b);
+      var tdCat = document.createElement("td"); var span = document.createElement("span"); span.className = "cat"; span.textContent = p.cat; tdCat.appendChild(span);
+      var tdSku = document.createElement("td"); tdSku.className = "sku"; tdSku.textContent = p.sku;
+      var tdPrice = document.createElement("td"); tdPrice.style.textAlign = "right"; tdPrice.className = "price"; tdPrice.textContent = money(p.price);
+      var tdStock = document.createElement("td"); tdStock.style.textAlign = "right"; tdStock.className = "stock"; tdStock.textContent = p.stock;
+      var tdImg = document.createElement("td"); var img = document.createElement("img"); img.className = "admin-thumb"; img.src = "assets/img/" + p.img; img.alt = ""; tdImg.appendChild(img);
+      var tdAct = document.createElement("td"); tdAct.className = "actions";
+      var btnEdit = document.createElement("button"); btnEdit.type = "button"; btnEdit.setAttribute("data-edit", p.id); btnEdit.textContent = "Edit";
+      var btnDel = document.createElement("button"); btnDel.type = "button"; btnDel.setAttribute("data-delete", p.id); btnDel.textContent = "Delete";
+      tdAct.appendChild(btnEdit); tdAct.appendChild(btnDel);
+      tr.appendChild(tdId); tr.appendChild(tdName); tr.appendChild(tdCat); tr.appendChild(tdSku);
+      tr.appendChild(tdPrice); tr.appendChild(tdStock); tr.appendChild(tdImg); tr.appendChild(tdAct);
+      list.appendChild(tr);
+    });
+  }
+  function money(n) { return "৳" + Number(n || 0).toFixed(2); }
+  function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+  function resetForm() {
+    state.editingId = null;
+    editingInput.value = "";
+    form.reset();
+    submitBtn.textContent = "Add product";
+    deleteBtn.hidden = true;
+    fields.id.disabled = false;
+  }
+  function initImportZip() {
+    var importBtn = $("button[data-action=\"import-zip\"]");
+    if (!importBtn) return;
+
+    on(importBtn, "click", function () {
+      var fileInput = $("#admin-zip-input");
+      if (!fileInput) {
+        fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.id = "admin-zip-input";
+        fileInput.accept = ".zip";
+        fileInput.style.display = "none";
+        document.body.appendChild(fileInput);
+      }
+      fileInput.click();
+    });
+  }
+  function editProduct(id) {
+    var i = indexOf(id);
+    if (i === -1) return;
+    state.editingId = id;
+    var p = state.products[i];
+    editingInput.value = id;
+    fields.id.value = p.id; fields.name.value = p.name; fields.cat.value = p.cat;
+    fields.sku.value = p.sku; fields.price.value = p.price || "";
+    fields.compare.value = p.compareAt === "" ? "" : p.compareAt;
+    fields.stock.value = p.stock || "";
+    fields.img.value = p.img; fields.blurb.value = p.blurb;
+    fields.rating.value = p.rating || ""; fields.reviews.value = p.reviews || "";
+    fields.colors.value = (p.colors || []).join(", ");
+    fields.flags.value = (p.flags || []).join(", ");
+    fields.specs.value = p.specs || "{}";
+    fields.id.disabled = true;
+    submitBtn.textContent = "Update product";
+    deleteBtn.hidden = false;
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function showToast(msg) {
+    var container = $("div[data-toasts]");
+    if (!container) return;
+    var toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerHTML = '<span style="padding:14px 20px;display:flex;align-items:center;gap:14px"><span style="flex:1"><b>' + esc(msg) + "</b></span></span>";
+    container.appendChild(toast);
+    setTimeout(function () { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 1400);
+  }
+
+  function apiRequest(path, method, body) {
+    if (!WT.admin.useApi || !WT.admin.apiBase) return Promise.resolve({ ok: true });
+    var url = WT.admin.apiBase + path;
+    var init = { method: method, headers: { "Content-Type": "application/json" } };
+    if (body) init.body = JSON.stringify(body);
+    return fetch(url, init).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("HTTP " + r.status)); });
+  }
+
+  on(form, "submit", function (e) {
+    e.preventDefault();
+    var p = fromForm();
+    if (!p.id || !p.name) { showToast("Id and name are required."); return; }
+    if (state.editingId) {
+      var i = indexOf(state.editingId);
+      if (i !== -1) {
+        p.id = state.editingId;
+        if (WT.admin.useApi) {
+          apiRequest("/products/" + state.editingId, "PUT", p).then(function () { state.products[i] = p; save(); resetForm(); showToast("Product updated."); });
+        } else { state.products[i] = p; save(); resetForm(); showToast("Product updated."); }
+      }
+    } else {
+      if (indexOf(p.id) !== -1) { showToast("A product with id \"" + esc(p.id) + "\" already exists."); return; }
+      if (WT.admin.useApi) {
+        apiRequest("/products", "POST", p).then(function (created) { state.products.push(created || p); save(); form.reset(); showToast("Product added."); });
+      } else { state.products.push(p); save(); form.reset(); showToast("Product added."); }
+    }
+  });
+
+  on(document, "click", function (e) {
+    var btn = e.target.closest ? e.target.closest("button") : null;
+    if (!btn) return;
+    var act = btn.getAttribute("data-action");
+    var editId = btn.getAttribute("data-edit");
+    var delId = btn.getAttribute("data-delete");
+
+    if (act === "reset") { resetForm(); }
+    else if (act === "reseed") {
+      if (!confirm("Seed the admin catalogue from the current data.js products? This replaces local storage contents.")) return;
+      if (WT.PRODUCTS && WT.PRODUCTS.length) {
+        state.products = WT.PRODUCTS.map(normalise); save(); showToast("Catalogue seeded from data.js (" + state.products.length + " products).");
+      } else { showToast("No products found in data.js."); }
+    }
+    else if (act === "export") {
+      var blob = new Blob([JSON.stringify(state.products, null, 2)], { type: "application/json" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = "wt-products.json";
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast("Exported " + state.products.length + " products to wt-products.json");
+    }
+    else if (editId) { e.preventDefault(); editProduct(editId); }
+    else if (delId) {
+      e.preventDefault();
+      if (confirm("Delete product \"" + esc(delId) + "\"?")) {
+        if (WT.admin.useApi) { apiRequest("/products/" + delId, "DELETE").then(function () { state.products.splice(indexOf(delId), 1); save(); showToast("Product deleted."); }); }
+        else { state.products.splice(indexOf(delId), 1); save(); showToast("Product deleted."); }
+      }
+    }
+    else if (btn === deleteBtn) {
+      e.preventDefault();
+      if (!state.editingId) return;
+      if (confirm("Delete product \"" + esc(state.editingId) + "\"?")) {
+        if (WT.admin.useApi) { apiRequest("/products/" + state.editingId, "DELETE").then(function () { state.products.splice(indexOf(state.editingId), 1); save(); resetForm(); showToast("Product deleted."); }); }
+        else { state.products.splice(indexOf(state.editingId), 1); save(); resetForm(); showToast("Product deleted."); }
+      }
+    }
+  });
+
+  load();
+  render();
+  
+  /* --- Bulk Import ZIP Logic --- */
+  initImportZip();
+})();
+</script>
+</body>
+</html>
+

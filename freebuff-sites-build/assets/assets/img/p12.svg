@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="p12">
+<defs><linearGradient id="lm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d98a2b"/><stop offset="1" stop-color="#a8631a"/></linearGradient></defs>
+<ellipse cx="300" cy="440" rx="128" ry="22" fill="#2b2721" opacity=".14"/>
+<ellipse cx="300" cy="418" rx="118" ry="26" fill="#1f1c18"/>
+<ellipse cx="300" cy="408" rx="118" ry="26" fill="#3a3f38"/>
+<rect x="292" y="180" width="16" height="230" fill="#9aa0a6"/>
+<path d="M300 78l-84 122h168z" fill="url(#lm)"/>
+<path d="M300 96l-56 90h112z" fill="#f6e6c4" opacity=".7"/>
+<path d="M196 220c-40 70-28 130 52 156 44 14 96 4 130-22" fill="none" stroke="#f6e6c4" stroke-width="4" opacity=".2"/>
+</svg>

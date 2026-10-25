@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="p3 hover">
+<g transform="translate(300 300) scale(1.06) translate(-300 -300)"><ellipse cx="300" cy="440" rx="170" ry="24" fill="#2b2721" opacity=".14"/>
+<path d="M158 226l298-26 16 30-298 28z" fill="#cbc4b4"/>
+<path d="M174 258l298-28v168l-298 26z" fill="#efe9dd"/>
+<path d="M192 282l262-24v134l-262 22z" fill="#ded6c4"/>
+<path d="M174 258l298-28v168l-298 26z" fill="none" stroke="#b5ac9a" stroke-width="2"/></g>
+</svg>

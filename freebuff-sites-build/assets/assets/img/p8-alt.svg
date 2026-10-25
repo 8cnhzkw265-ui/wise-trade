@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="p8 hover">
+<g transform="translate(300 300) scale(1.06) translate(-300 -300)"><defs><linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d8b47a"/><stop offset="1" stop-color="#9c7b3f"/></linearGradient></defs>
+<ellipse cx="300" cy="452" rx="140" ry="24" fill="#2b2721" opacity=".14"/>
+<path d="M182 300h232l-26 132H208z" fill="url(#br)"/>
+<path d="M182 300h232l-9 42H191z" fill="#e6c894"/>
+<circle cx="298" cy="300" r="86" fill="url(#br)"/>
+<circle cx="298" cy="300" r="66" fill="#e9e4da"/>
+<circle cx="298" cy="300" r="20" fill="#c39c5c"/>
+<path d="M414 340c34-8 48 28 30 54" fill="none" stroke="#b8925a" stroke-width="11" stroke-linecap="round"/></g>
+</svg>

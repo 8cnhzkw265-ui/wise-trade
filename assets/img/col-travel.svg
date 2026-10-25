@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" role="img" aria-label="Travel and field kit">
+<defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#20303a"/><stop offset="1" stop-color="#0e1a20"/></linearGradient></defs>
+<rect width="1000" height="600" fill="url(#tg)"/>
+<circle cx="820" cy="120" r="70" fill="#d9cba8" opacity=".25"/>
+<circle cx="820" cy="120" r="46" fill="#f0e6cd" opacity=".5"/>
+<!-- duffel -->
+<g transform="translate(150 220)">
+<rect width="440" height="200" rx="40" fill="#22323a"/>
+<rect y="60" width="440" height="80" fill="#16242b"/>
+<path d="M120 20c0-40 34-58 100-58s100 18 100 58" fill="none" stroke="#2f4a52" stroke-width="14" stroke-linecap="round"/>
+<rect x="196" y="86" width="48" height="28" rx="6" fill="#d98a2b"/>
+<path d="M60 100h90M300 100h80" stroke="#3fbf87" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+</g>
+<!-- mini hub -->
+<g transform="translate(650 300)">
+<rect width="150" height="150" rx="26" fill="#0b1418" stroke="#2f4a52" stroke-width="3"/>
+<g fill="#d9cba8"><rect x="26" y="42" width="42" height="14" rx="7"/><rect x="82" y="42" width="42" height="14" rx="7"/></g>
+<rect x="26" y="80" width="60" height="12" rx="6" fill="#d98a2b"/>
+<circle cx="115" cy="86" r="8" fill="#3fbf87"/>
+</g>
+<!-- notebook -->
+<g transform="translate(360 400) rotate(-8)">
+<rect width="150" height="120" rx="8" fill="#d98a2b"/>
+<rect x="12" y="12" width="126" height="96" rx="5" fill="#fbf8f1"/>
+<path d="M28 60h40M80 60h44M28 78h70" stroke="#c9c2b0" stroke-width="4" stroke-linecap="round"/>
+</g>
+</svg>

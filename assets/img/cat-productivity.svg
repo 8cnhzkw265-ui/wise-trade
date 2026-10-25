@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Productivity tools">
+<defs>
+<linearGradient id="p-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9e5da"/><stop offset="1" stop-color="#d2ccbc"/></linearGradient>
+<linearGradient id="p-cover" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3d38"/><stop offset="1" stop-color="#222420"/></linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#p-bg)"/>
+<ellipse cx="400" cy="500" rx="290" ry="40" fill="#6a6152" opacity=".24"/>
+<!-- notebook -->
+<g transform="translate(330 330) rotate(-6)">
+<rect x="-150" y="-160" width="300" height="330" rx="12" fill="url(#p-cover)"/>
+<rect x="-126" y="-140" width="252" height="290" rx="6" fill="#f6f2e8"/>
+<g stroke="#d5cebd" stroke-width="2">
+<path d="M-104 -100h208M-104 -64h208M-104 -28h208M-104 8h208M-104 44h208M-104 80h150"/>
+</g>
+<rect x="-150" y="-160" width="26" height="330" rx="10" fill="#8b5a2b"/>
+</g>
+<!-- pen -->
+<g transform="translate(560 300) rotate(24)">
+<rect x="-14" y="-170" width="28" height="250" rx="12" fill="#2a2d31"/>
+<path d="M-14 -170l14 -40 14 40z" fill="#9aa0a6"/>
+<rect x="-15" y="62" width="30" height="16" rx="6" fill="#9aa0a6"/>
+</g>
+<!-- screen -->
+<g transform="translate(360 200)">
+<rect x="-140" y="-90" width="280" height="150" rx="10" fill="#2a2d2f"/>
+<rect x="-128" y="-78" width="256" height="126" rx="5" fill="#4a5c42"/>
+<path d="M-106 30l28-34 26 24 30-40 34 42" fill="none" stroke="#9db584" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="-12" y="60" width="24" height="18" fill="#2a2d2f"/>
+<rect x="-56" y="78" width="112" height="10" rx="5" fill="#2a2d2f"/>
+</g>
+</svg>

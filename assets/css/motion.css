@@ -1,0 +1,129 @@
+/* ============================================================
+   MOTION & INTERACTION
+   Progressive enhancement: every effect below is additive and
+   degrades cleanly without JS or with reduced-motion enabled.
+   ============================================================ */
+
+/* ---------- SCROLL PROGRESS ---------- */
+.progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  z-index: 70;
+  pointer-events: none;
+  background: transparent;
+}
+.progress__bar {
+  height: 100%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: var(--ink);
+  will-change: transform;
+}
+
+/* ---------- HERO PARALLAX + TILE LIFT ---------- */
+.mosaic { position: relative; }
+.mosaic__grid > .mtile {
+  transform: translate3d(0, var(--py, 0px), 0);
+  transition: transform var(--t-slow) var(--ease-soft), box-shadow var(--t-base) var(--ease);
+  will-change: transform;
+}
+.mosaic__grid > .mtile:hover {
+  transform: translate3d(0, var(--py, 0px), 0) scale(1.012);
+  box-shadow: var(--shadow-lg);
+}
+/* image drifts slower than the tile for depth */
+.mtile__media img {
+  will-change: transform, translate;
+  height: calc(100% + 60px);
+  margin-top: -30px;
+}
+
+/* ---------- MAGNETIC TARGETS ----------
+   JS sets --mx/--my (0..1) from pointer position; the element
+   leans toward the cursor. Falls back to a static hover lift. */
+[data-magnetic] {
+  transition: transform var(--t-base) var(--ease-soft);
+  will-change: transform;
+}
+[data-magnetic]:hover { transform: translate3d(var(--mx, 0px), var(--my, 0px), 0); }
+
+/* Card tilt removed — the JS-driven perspective lean forced a layout read
+   on every pointermove and re-rasterised the blended card images, which
+   made hovering products feel laggy. components.css owns a plain,
+   compositor-friendly lift instead. */
+
+/* ---------- TEXT REVEAL ----------
+   Headings mask upward from behind a clipped line. The element
+   reveals itself, so no observer wiring is required — it simply
+   animates once on load, or when a data-reveal ancestor lands. */
+.reveal-line { display: block; overflow: hidden; padding-bottom: .06em; }
+.reveal-line > span {
+  display: block;
+  transform: translateY(105%);
+  transition: transform var(--t-slow) var(--ease-soft);
+}
+.reveal-line.is-in > span,
+[data-reveal].is-in .reveal-line > span,
+[data-stagger].is-in .reveal-line > span { transform: translateY(0); }
+
+/* ---------- PRESS MARQUEE ---------- */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee__track {
+  display: flex;
+  align-items: center;
+  gap: clamp(40px, 6vw, 96px);
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee:hover .marquee__track { animation-play-state: paused; }
+.marquee__item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+  color: var(--faint);
+  transition: color var(--t-fast) var(--ease);
+}
+.marquee__item:hover { color: var(--ink); }
+.marquee__logo {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: -.015em;
+}
+.marquee__meta {
+  font-family: var(--font-mono);
+  font-size: .625rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ---------- VALUE / TILE ICON LIFT ---------- */
+.value__icon { transition: transform var(--t-base) var(--ease-soft); }
+.value:hover .value__icon { transform: translateY(-4px) scale(1.06); }
+
+/* ---------- DRAWER / OVERLAY MOTION ----------
+   components.css already drives drawers via .is-open; we only
+   tune the curve so they share the site's easing vocabulary. */
+.drawer { transition-timing-function: var(--ease-soft); }
+
+/* ---------- REDUCED MOTION ----------
+   Kill looping and decorative animation; keep state changes
+   instant so nothing feels broken. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; transform: none; }
+  .marquee { mask-image: none; -webkit-mask-image: none; }
+  .reveal-line > span { transform: none; transition: none; }
+  [data-magnetic], .card, .mosaic__grid > .mtile { transform: none !important; transition: none; }
+  .progress__bar { transition: none; }
+}

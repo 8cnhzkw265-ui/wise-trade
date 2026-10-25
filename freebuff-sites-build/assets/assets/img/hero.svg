@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Trading desk at dusk">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#12160f"/><stop offset=".55" stop-color="#1d2418"/><stop offset="1" stop-color="#2b3324"/>
+</linearGradient>
+<radialGradient id="lamp" cx=".72" cy=".32" r=".55">
+<stop offset="0" stop-color="#d98a2b" stop-opacity=".55"/><stop offset="1" stop-color="#d98a2b" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#0f4c33"/><stop offset="1" stop-color="#08301f"/>
+</linearGradient>
+<linearGradient id="desk" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#4a3f2e"/><stop offset="1" stop-color="#241d13"/>
+</linearGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#sky)"/>
+<rect width="1600" height="900" fill="url(#lamp)"/>
+<circle cx="1160" cy="300" r="150" fill="#d98a2b" opacity=".1"/>
+
+<!-- window glow -->
+<g opacity=".18">
+<rect x="120" y="120" width="300" height="260" rx="8" fill="#e8dcc0"/>
+<rect x="120" y="120" width="300" height="260" rx="8" fill="none" stroke="#0b0e08" stroke-width="7"/>
+<path d="M270 120v260M120 250h300" stroke="#0b0e08" stroke-width="7"/>
+</g>
+
+<!-- monitors -->
+<g>
+<rect x="520" y="150" width="420" height="270" rx="10" fill="#0b0e08"/>
+<rect x="536" y="166" width="388" height="238" rx="4" fill="url(#screen)"/>
+<g fill="#eaf3ec" opacity=".9">
+<rect x="556" y="192" width="120" height="9" rx="4"/>
+<rect x="556" y="214" width="200" height="7" rx="3" opacity=".6"/>
+<rect x="556" y="232" width="170" height="7" rx="3" opacity=".45"/>
+</g>
+<!-- candlestick chart -->
+<g stroke-width="4" stroke-linecap="round">
+<path d="M580 340V296" stroke="#e05a45"/><rect x="573" y="302" width="14" height="26" rx="3" fill="#e05a45"/>
+<path d="M624 356V288" stroke="#3fbf87"/><rect x="617" y="296" width="14" height="42" rx="3" fill="#3fbf87"/>
+<path d="M668 330V262" stroke="#e05a45"/><rect x="661" y="272" width="14" height="44" rx="3" fill="#e05a45"/>
+<path d="M712 344V276" stroke="#3fbf87"/><rect x="705" y="286" width="14" height="34" rx="3" fill="#3fbf87"/>
+<path d="M756 312V240" stroke="#3fbf87"/><rect x="749" y="250" width="14" height="50" rx="3" fill="#3fbf87"/>
+<path d="M800 300V222" stroke="#e05a45"/><rect x="793" y="232" width="14" height="54" rx="3" fill="#e05a45"/>
+<path d="M844 288V206" stroke="#3fbf87"/><rect x="837" y="216" width="14" height="58" rx="3" fill="#3fbf87"/>
+</g>
+<path d="M574 372h300" stroke="#3fbf87" stroke-width="3" opacity=".6"/>
+<rect x="700" y="420" width="60" height="14" fill="#0b0e08"/>
+<rect x="660" y="434" width="140" height="10" rx="4" fill="#1a1f16"/>
+</g>
+
+<!-- laptop -->
+<g>
+<path d="M980 400h240l24 40H956z" fill="#232a1e"/>
+<rect x="1000" y="316" width="200" height="86" rx="6" fill="#0b0e08"/>
+<rect x="1008" y="322" width="184" height="74" rx="3" fill="#10382a"/>
+<path d="M1020 372l22-22 18 16 24-30 30 30 20-18 30 24" fill="none" stroke="#3fbf87" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+
+<!-- lamp -->
+<g>
+<path d="M1360 440V250" stroke="#3a3226" stroke-width="9" stroke-linecap="round"/>
+<path d="M1290 250h140l-40-60h-60z" fill="#4a3f2e"/>
+<path d="M1310 250h100l-28-42h-44z" fill="#d98a2b" opacity=".85"/>
+<ellipse cx="1360" cy="444" rx="62" ry="14" fill="#2a2318"/>
+<path d="M1300 250l-120 180h260l-120-180z" fill="#d98a2b" opacity=".08"/>
+</g>
+
+<!-- desk -->
+<rect y="620" width="1600" height="18" fill="url(#desk)"/>
+<rect y="638" width="1600" height="262" fill="#1a160e"/>
+
+<!-- notebook + mug + cable -->
+<g>
+<rect x="300" y="566" width="200" height="54" rx="6" fill="#2f3a2c" transform="rotate(-4 400 593)"/>
+<rect x="300" y="566" width="200" height="10" rx="5" fill="#0f4c33" transform="rotate(-4 400 593)"/>
+<rect x="470" y="556" width="70" height="64" rx="8" fill="#8a5a3b"/>
+<path d="M540 574h20a18 18 0 0 1 0 36h-20" fill="none" stroke="#8a5a3b" stroke-width="9"/>
+<path d="M486 556c-8-16 8-22 0-38M508 556c-8-16 8-22 0-38" fill="none" stroke="#d8d0c0" stroke-width="4" stroke-linecap="round" opacity=".4"/>
+</g>
+<path d="M760 606c60-26 120 20 180-6s90-40 140-8" fill="none" stroke="#2f3a2c" stroke-width="7" stroke-linecap="round"/>
+<circle cx="1080" cy="592" r="11" fill="#d98a2b"/>
+
+<!-- plant -->
+<g opacity=".9">
+<path d="M1480 620c0-60 16-96 44-116-4 44-14 78-30 116z" fill="#2f4a30"/>
+<path d="M1480 620c6-52-10-88-36-104 12 40 22 70 30 104z" fill="#3c5c3c"/>
+<rect x="1452" y="600" width="56" height="20" rx="4" fill="#4a3f2e"/>
+</g>
+</svg>

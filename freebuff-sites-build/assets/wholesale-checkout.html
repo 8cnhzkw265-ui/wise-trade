@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16180f">
+<title>Wholesale checkout â€” Wise Trade</title>
+<meta name="description" content="Secure wholesale checkout at Wise Trade â€” trade pricing, 15-unit minimum per product.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230f4c33'/%3E%3Cpath d='M8 22V10m0 0 8 8 8-8v12' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  .co { display: grid; grid-template-columns: 1.3fr .8fr; gap: clamp(28px, 4vw, 64px); align-items: start; padding-block: clamp(28px, 4vw, 56px) clamp(56px, 8vw, 96px); }
+  .co__step { display: grid; gap: 18px; margin-bottom: 34px; }
+  .co__stepnum {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--ink); color: #fff;
+    display: grid; place-items: center;
+    font-family: var(--font-mono); font-size: .8125rem; font-weight: 600;
+    flex: none;
+  }
+  .field { display: grid; gap: 6px; }
+  .field label { font-size: .8125rem; font-weight: 600; }
+  .field input, .field select {
+    width: 100%; padding: 13px 16px;
+    border: 1px solid var(--stroke-strong); border-radius: var(--radius-sm);
+    background: var(--surface); outline: none;
+    transition: border-color .2s var(--ease);
+  }
+  .field input:focus, .field select:focus { border-color: var(--ink); }
+  .field--2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .co__summary { position: sticky; top: calc(var(--header-h) + 20px); background: var(--surface); border: 1px solid var(--stroke); border-radius: var(--radius-lg); padding: 24px; display: grid; gap: 18px; }
+  @media (max-width: 900px) { .co { grid-template-columns: 1fr; } .co__summary { position: static; } .field--2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body data-tier="wholesale">
+
+<div id="icon-sprite" hidden aria-hidden="true"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="progress" aria-hidden="true"><div class="progress__bar" data-progress></div></div>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="wholesale.html" aria-label="Wise Trade wholesale â€” home">
+      <span class="brand__mark"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V5l7 9 7-9v15"/></svg></span>
+      Wise&nbsp;Trade<sup>Â®</sup>
+    </a>
+    <p class="search__hint" style="justify-self:center">Wholesale checkout &middot; 15-unit minimum</p>
+    <div class="header__actions" style="gap:18px">
+      <a class="link" href="shop.html">Retail store</a>
+      <a class="link" href="wholesale.html">Continue shopping</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="container co">
+
+    <form data-checkout novalidate>
+      <section class="co__step">
+        <h2 style="font-size:1.25rem;display:flex;align-items:center;gap:12px"><span class="co__stepnum">1</span> Contact</h2>
+        <div class="field">
+          <label for="co-email">Email address</label>
+          <input id="co-email" type="email" autocomplete="email" required placeholder="you@desk.com">
+        </div>
+        <label class="fcheck" style="font-size:.875rem">
+          <input type="checkbox" checked>
+          <span class="fcheck__box"><svg><use href="#i-check"/></svg></span>
+          <span>Email me order updates and restock alerts</span>
+        </label>
+      </section>
+
+      <section class="co__step">
+        <h2 style="font-size:1.25rem;display:flex;align-items:center;gap:12px"><span class="co__stepnum">2</span> Shipping address</h2>
+        <div class="field--2">
+          <div class="field"><label for="co-first">First name</label><input id="co-first" autocomplete="given-name" required></div>
+          <div class="field"><label for="co-last">Last name</label><input id="co-last" autocomplete="family-name" required></div>
+        </div>
+        <div class="field"><label for="co-addr">Address</label><input id="co-addr" autocomplete="street-address" required></div>
+        <div class="field"><label for="co-addr2">Apartment, suite (optional)</label><input id="co-addr2" autocomplete="address-line2"></div>
+        <div class="field--2">
+          <div class="field">
+            <label for="co-country">Country</label>
+            <select id="co-country" autocomplete="country">
+              <option>Netherlands</option><option>Germany</option><option>France</option>
+              <option>Spain</option><option>Ireland</option><option>United Kingdom</option>
+              <option>United States</option><option>Canada</option><option>Australia</option>
+            </select>
+          </div>
+          <div class="field"><label for="co-zip">Postal code</label><input id="co-zip" autocomplete="postal-code" required></div>
+        </div>
+        <div class="field--2">
+          <div class="field"><label for="co-city">City</label><input id="co-city" autocomplete="address-level2" required></div>
+          <div class="field"><label for="co-region">State / province</label><input id="co-region" autocomplete="address-level1"></div>
+        </div>
+      </section>
+
+      <section class="co__step">
+        <h2 style="font-size:1.25rem;display:flex;align-items:center;gap:12px"><span class="co__stepnum">3</span> Delivery</h2>
+        <div style="display:grid;gap:10px">
+          <label class="fcheck" style="border:1.5px solid var(--brand);border-radius:var(--radius);padding:14px;background:var(--brand-soft)">
+            <input type="radio" name="ship" value="standard" checked style="width:17px;height:17px;accent-color:var(--brand)">
+            <span style="flex:1"><b style="display:block;font-size:.9375rem">Standard Â· 2â€“4 days</b>
+            <small style="color:var(--muted)">Carbon-neutral, tracked</small></span>
+            <b data-ship-standard>Free</b>
+          </label>
+          <label class="fcheck" style="border:1.5px solid var(--stroke-strong);border-radius:var(--radius);padding:14px">
+            <input type="radio" name="ship" value="express" style="width:17px;height:17px;accent-color:var(--brand)">
+            <span style="flex:1"><b style="display:block;font-size:.9375rem">Express Â· 1â€“2 days</b>
+            <small style="color:var(--muted)">Priority handling</small></span>
+            <b>$14.00</b>
+          </label>
+        </div>
+      </section>
+
+      <section class="co__step">
+        <h2 style="font-size:1.25rem;display:flex;align-items:center;gap:12px"><span class="co__stepnum">4</span> Payment</h2>
+        <div style="border:1.5px solid var(--stroke-strong);border-radius:var(--radius);padding:20px;display:grid;gap:14px">
+          <div class="field">
+            <label for="co-card">Card number</label>
+            <input id="co-card" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" required>
+          </div>
+          <div class="field--2">
+            <div class="field"><label for="co-exp">Expiry</label><input id="co-exp" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" required></div>
+            <div class="field"><label for="co-cvc">CVC</label><input id="co-cvc" inputmode="numeric" autocomplete="cc-csc" placeholder="123" required></div>
+          </div>
+          <p class="search__hint">Demo storefront â€” no payment is processed and no card data leaves your browser.</p>
+        </div>
+      </section>
+
+      <button class="btn btn--primary btn--lg btn--block" type="submit">
+        <svg><use href="#i-lock"/></svg> <span data-pay-label>Pay now</span>
+      </button>
+      <p class="search__hint" style="text-align:center">By placing this order you agree to our <a href="#" style="text-decoration:underline;text-underline-offset:3px">Terms</a> and <a href="#" style="text-decoration:underline;text-underline-offset:3px">Privacy Policy</a>.</p>
+    </form>
+
+    <aside class="co__summary">
+      <h2 style="font-size:1.125rem">Wholesale order summary <small data-summary-count></small></h2>
+      <p class="search__hint" style="margin:0">Trade pricing &middot; 15-unit minimum per product</p>
+      <div data-summary-items style="display:grid;gap:14px"></div>
+      <div class="freebar">
+        <div class="freebar__track"><div class="freebar__fill" data-summary-bar style="width:0%"></div></div>
+        <p class="freebar__text" data-summary-free></p>
+      </div>
+      <div class="totals">
+        <div class="totals__row"><span>Subtotal</span><span data-sum-subtotal>$0.00</span></div>
+        <div class="totals__row"><span>Shipping</span><span data-sum-shipping>Free</span></div>
+        <div class="totals__row"><span>Estimated tax</span><span data-sum-tax>$0.00</span></div>
+        <div class="totals__row totals__row--grand"><span>Total</span><span data-sum-total>$0.00</span></div>
+      </div>
+      <div class="assure" style="grid-template-columns:1fr;gap:10px">
+        <div><svg><use href="#i-refresh"/></svg> 60-day free returns</div>
+        <div><svg><use href="#i-shield"/></svg> 5-year warranty, repairs included</div>
+        <div><svg><use href="#i-truck"/></svg> Ships from Rotterdam within 24h</div>
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="footer" style="padding-block:28px">
+  <div class="container">
+    <div class="footer__bottom" style="border:0;padding:0">
+      <p>&copy; <span data-year>2026</span> Wise Trade B.V.</p>
+      <div class="footer__pay">
+        <span>VISA</span><span>MC</span><span>AMEX</span><span>PAYPAL</span><span>IDEAL</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toasts" data-toasts role="status" aria-live="polite" aria-atomic="false"></div>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/motion.js"></script>
+<script src="assets/js/checkout.js"></script>
+</body>
+</html>
